@@ -7,7 +7,7 @@ export class SimpleActor extends Actor {
   /** @override */
   getRollData() {
     const data = super.getRollData();
-    const shorthand = game.settings.get("worldbuilding", "macroShorthand");
+    const shorthand = game.settings.get("monsterweek", "macroShorthand");
     const formulaAttributes = [];
 
     // Handle formula attributes when the short syntax is disabled.

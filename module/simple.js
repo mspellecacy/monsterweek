@@ -15,7 +15,7 @@ import { preloadHandlebarsTemplates } from "./templates.js";
 /* -------------------------------------------- */
 
 Hooks.once("init", async function() {
-  console.log(`Initializing Simple Worldbuilding System`);
+  console.log(`Initializing Monster of the Week`);
 
   /**
    * Set an initiative formula for the system. This will be updated later.
@@ -31,12 +31,12 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("worldbuilding", SimpleActorSheet, { makeDefault: true });
+  Actors.registerSheet("monsterweek", SimpleActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("worldbuilding", SimpleItemSheet, { makeDefault: true });
+  Items.registerSheet("monsterweek", SimpleItemSheet, { makeDefault: true });
 
   // Register system settings
-  game.settings.register("worldbuilding", "macroShorthand", {
+  game.settings.register("monsterweek", "macroShorthand", {
     name: "SETTINGS.SimpleMacroShorthandN",
     hint: "SETTINGS.SimpleMacroShorthandL",
     scope: "world",
@@ -46,7 +46,7 @@ Hooks.once("init", async function() {
   });
 
   // Register initiative setting.
-  game.settings.register("worldbuilding", "initFormula", {
+  game.settings.register("monsterweek", "initFormula", {
     name: "SETTINGS.SimpleInitFormulaN",
     hint: "SETTINGS.SimpleInitFormulaL",
     scope: "world",
@@ -57,7 +57,7 @@ Hooks.once("init", async function() {
   });
 
   // Retrieve and assign the initiative formula setting.
-  const initFormula = game.settings.get("worldbuilding", "initFormula");
+  const initFormula = game.settings.get("monsterweek", "initFormula");
   _simpleUpdateInit(initFormula);
 
   /**
@@ -104,11 +104,11 @@ Hooks.on("getActorDirectoryEntryContext", (html, options) => {
     icon: '<i class="fas fa-stamp"></i>',
     condition: li => {
       const actor = game.actors.get(li.data("entityId"));
-      return !actor.getFlag("worldbuilding", "isTemplate");
+      return !actor.getFlag("monsterweek", "isTemplate");
     },
     callback: li => {
       const actor = game.actors.get(li.data("entityId"));
-      actor.setFlag("worldbuilding", "isTemplate", true);
+      actor.setFlag("monsterweek", "isTemplate", true);
     }
   });
 
@@ -118,11 +118,11 @@ Hooks.on("getActorDirectoryEntryContext", (html, options) => {
     icon: '<i class="fas fa-times"></i>',
     condition: li => {
       const actor = game.actors.get(li.data("entityId"));
-      return actor.getFlag("worldbuilding", "isTemplate");
+      return actor.getFlag("monsterweek", "isTemplate");
     },
     callback: li => {
       const actor = game.actors.get(li.data("entityId"));
-      actor.setFlag("worldbuilding", "isTemplate", false);
+      actor.setFlag("monsterweek", "isTemplate", false);
     }
   });
 });
@@ -137,11 +137,11 @@ Hooks.on("getItemDirectoryEntryContext", (html, options) => {
     icon: '<i class="fas fa-stamp"></i>',
     condition: li => {
       const item = game.items.get(li.data("entityId"));
-      return !item.getFlag("worldbuilding", "isTemplate");
+      return !item.getFlag("monsterweek", "isTemplate");
     },
     callback: li => {
       const item = game.items.get(li.data("entityId"));
-      item.setFlag("worldbuilding", "isTemplate", true);
+      item.setFlag("monsterweek", "isTemplate", true);
     }
   });
 
@@ -151,11 +151,11 @@ Hooks.on("getItemDirectoryEntryContext", (html, options) => {
     icon: '<i class="fas fa-times"></i>',
     condition: li => {
       const item = game.items.get(li.data("entityId"));
-      return item.getFlag("worldbuilding", "isTemplate");
+      return item.getFlag("monsterweek", "isTemplate");
     },
     callback: li => {
       const item = game.items.get(li.data("entityId"));
-      item.setFlag("worldbuilding", "isTemplate", false);
+      item.setFlag("monsterweek", "isTemplate", false);
     }
   });
 });
@@ -197,7 +197,7 @@ async function _simpleDirectoryTemplates(entityType = 'actor') {
   const cls = entityType == 'actor' ? Actor : Item;
 
   // Query for all entities of this type using the "isTemplate" flag.
-  let entities = entityCollection.filter(a => a.data.flags?.worldbuilding?.isTemplate === true);
+  let entities = entityCollection.filter(a => a.data.flags?.monsterweek?.isTemplate === true);
 
   // Initialize variables related to the entity class.
   let ent = game.i18n.localize(cls.config.label);
@@ -228,7 +228,7 @@ async function _simpleDirectoryTemplates(entityType = 'actor') {
 
     // Render the entity creation form
     let templateData = {upper: ent, lower: ent.toLowerCase(), types: types},
-        dlg = await renderTemplate(`systems/worldbuilding/templates/sidebar/entity-create.html`, templateData);
+        dlg = await renderTemplate(`systems/monsterweek/templates/sidebar/entity-create.html`, templateData);
 
     // Render the confirmation dialog window
     new Dialog({
@@ -252,7 +252,7 @@ async function _simpleDirectoryTemplates(entityType = 'actor') {
               createData = mergeObject(templateActor.data, createData, {inplace: false});
               createData.type = templateActor.data.type;
               // Clear the flag so that this doesn't become a new template.
-              delete createData.flags.worldbuilding.isTemplate;
+              delete createData.flags.monsterweek.isTemplate;
             }
             // Otherwise, restore to a valid entity type (character/item).
             else {

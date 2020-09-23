@@ -1,7 +1,7 @@
 {
-  "name": "worldbuilding",
+  "name": "monsterweek",
   "version": "1.0.0",
-  "description": "CSS compiler for the Worldbuilding system",
+  "description": "CSS compiler for the Monster of the Week system",
   "scripts": {
     "css": "gulp css",
     "watch": "gulp",
