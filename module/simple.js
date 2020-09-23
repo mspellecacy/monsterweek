@@ -31,9 +31,15 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("monsterweek", SimpleActorSheet, { makeDefault: true });
+  Actors.registerSheet("monsterweek", SimpleActorSheet, {
+    types: ["hunter", "bystander", "location", "minion", "monster"],
+    makeDefault: true
+  });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("monsterweek", SimpleItemSheet, { makeDefault: true });
+  Items.registerSheet("monsterweek", SimpleItemSheet, {
+    types: ["weapon", "armor", "gear", "move"],
+    makeDefault: true
+  });
 
   // Register system settings
   game.settings.register("monsterweek", "macroShorthand", {
@@ -161,27 +167,27 @@ Hooks.on("getItemDirectoryEntryContext", (html, options) => {
 });
 
 
-/**
- * Adds the actor template selection dialog.
- */
-ActorDirectory.prototype._onCreate = async (event) => {
-  // Do not allow the creation event to bubble to other listeners
-  event.preventDefault();
-  event.stopPropagation();
-
-  _simpleDirectoryTemplates('actor');
-}
-
-/**
- * Adds the item template selection dialog.
- */
-ItemDirectory.prototype._onCreate = async (event) => {
-  // Do not allow the creation event to bubble to other listeners
-  event.preventDefault();
-  event.stopPropagation();
-
-  _simpleDirectoryTemplates('item');
-}
+// /**
+//  * Adds the actor template selection dialog.
+//  */
+// ActorDirectory.prototype._onCreate = async (event) => {
+//   // Do not allow the creation event to bubble to other listeners
+//   event.preventDefault();
+//   event.stopPropagation();
+// 
+//   _simpleDirectoryTemplates('actor');
+// }
+// 
+// /**
+//  * Adds the item template selection dialog.
+//  */
+// ItemDirectory.prototype._onCreate = async (event) => {
+//   // Do not allow the creation event to bubble to other listeners
+//   event.preventDefault();
+//   event.stopPropagation();
+// 
+//   _simpleDirectoryTemplates('item');
+// }
 
 /**
  * Display the entity template dialog.
