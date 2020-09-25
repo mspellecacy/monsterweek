@@ -54,3 +54,42 @@ Hooks.once("init", async function() {
   // Preload template partials.
   preloadHandlebarsTemplates();
 });
+
+/* -------------------------------------------- */
+
+// Override the default icons for items.
+Hooks.on("createItem", item => {
+  let MYSTERY_MAN_ICON = "icons/svg/mystery-man.svg";
+
+  let DEFAULT_GEAR_ICON = "icons/svg/chest.svg";
+  let DEFAULT_WEAPON_ICON = "icons/svg/combat.svg";
+  let DEFAULT_ARMOR_ICON = "icons/svg/statue.svg";
+  let DEFAULT_MOVE_ICON = "icons/svg/book.svg";
+
+  var newImg = DEFAULT_GEAR_ICON;
+  if (item.type === "weapon") {
+    newImg = DEFAULT_WEAPON_ICON;
+  }
+  else if (item.type === "armor") {
+    newImg = DEFAULT_ARMOR_ICON;
+  }
+  else if (item.type === "move") {
+    newImg = DEFAULT_MOVE_ICON;
+  }
+
+	item.update({
+    img: (!item.data.img || item.data.img === MYSTERY_MAN_ICON)
+        ? newImg
+        : item.data.img
+  });
+});
+
+Hooks.once('setup', async function() {
+  // Pre-cache these or else the first time we load the sheet it will overwrite
+  // the image we patch in. Thanks to
+  // https://github.com/schultzcole/FVTT-Default-Image-Overrider for this trick!
+	await Promise.all([
+		getTemplate("systems/monsterweek/templates/actor-sheet.html"),
+		getTemplate("systems/monsterweek/templates/item-sheet.html"),
+	]);
+});
