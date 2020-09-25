@@ -1,7 +1,6 @@
 .monsterweek {
   /* Sheet Tabs */
   /* Items List */
-  /* Attributes */
 }
 .monsterweek .window-content {
   height: 100%;
@@ -108,52 +107,6 @@
   font-size: 11px;
   flex: none;
   width: auto;
-}
-.monsterweek .attributes-header {
-  padding: 5px;
-  margin: 5px 0;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid #AAA;
-  border-radius: 2px;
-  text-align: center;
-  font-weight: bold;
-}
-.monsterweek .attributes-header .attribute-label {
-  flex: 1.5;
-}
-.monsterweek .attributes-header .attribute-control {
-  flex: 0 0 20px;
-}
-.monsterweek .attributes-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.monsterweek .attributes-list li > * {
-  margin: 0 3px;
-  height: 28px;
-  line-height: 24px;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid #AAA;
-}
-.monsterweek .attributes-list a.attribute-control {
-  flex: 0 0 20px;
-  text-align: center;
-  line-height: 28px;
-  border: none;
-}
-.monsterweek .attributes-list .attribute-col label {
-  font-size: 10px;
-  text-align: center;
-  line-height: 1;
-}
-.monsterweek .attributes-list .attribute-col input {
-  font-size: 11px;
-  text-align: center;
-  line-height: 1;
-  height: 50%;
 }
 .monsterweek.sheet.actor {
   min-width: 560px;

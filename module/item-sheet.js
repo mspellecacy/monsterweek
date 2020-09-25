@@ -1,5 +1,3 @@
-import { ATTRIBUTE_TYPES } from "./constants.js";
-
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
@@ -22,11 +20,9 @@ export class SimpleItemSheet extends ItemSheet {
   /** @override */
   getData() {
     const data = super.getData();
-    data.dtypes = ATTRIBUTE_TYPES;
-    for ( let attr of Object.values(data.data.attributes) ) {
-      attr.isCheckbox = attr.dtype === "Boolean";
-      attr.isResource = attr.dtype === "Resource";
-    }
+
+    // TODO: Tweak data if necessary.
+
     return data;
   }
 
@@ -50,73 +46,15 @@ export class SimpleItemSheet extends ItemSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
-    // Add or Remove Attribute
-    html.find(".attributes").on("click", ".attribute-control", this._onClickAttributeControl.bind(this));
-  }
-
-  /* -------------------------------------------- */
-
-  /**
-   * Listen for click events on an attribute control to modify the composition of attributes in the sheet
-   * @param {MouseEvent} event    The originating left click event
-   * @private
-   */
-  async _onClickAttributeControl(event) {
-    event.preventDefault();
-    const a = event.currentTarget;
-    const action = a.dataset.action;
-    const attrs = this.object.data.data.attributes;
-    const form = this.form;
-
-    // Add new attribute
-    if ( action === "create" ) {
-      const objKeys = Object.keys(attrs);
-      let nk = Object.keys(attrs).length + 1;
-      let newValue = `attr${nk}`;
-      let newKey = document.createElement("div");
-      while ( objKeys.includes(newValue) ) {
-        ++nk;
-        newValue = `attr${nk}`;
-      }
-      newKey.innerHTML = `<input type="text" name="data.attributes.attr${nk}.key" value="${newValue}"/>`;
-      newKey = newKey.children[0];
-      form.appendChild(newKey);
-      await this._onSubmit(event);
-    }
-
-    // Remove existing attribute
-    else if ( action === "delete" ) {
-      const li = a.closest(".attribute");
-      li.parentElement.removeChild(li);
-      await this._onSubmit(event);
-    }
+    // TODO: Bind onclick handlers
+    // html.find(".attributes").on("click", ".attribute-control", this._onClickAttributeControl.bind(this));
   }
 
   /* -------------------------------------------- */
 
   /** @override */
   _updateObject(event, formData) {
-
-    // Handle the free-form attributes list
-    const formAttrs = expandObject(formData).data.attributes || {};
-    const attributes = Object.values(formAttrs).reduce((obj, v) => {
-      let k = v["key"].trim();
-      if ( /[\s\.]/.test(k) )  return ui.notifications.error("Attribute keys may not contain spaces or periods");
-      delete v["key"];
-      obj[k] = v;
-      return obj;
-    }, {});
-
-    // Remove attributes which are no longer used
-    for ( let k of Object.keys(this.object.data.data.attributes) ) {
-      if ( !attributes.hasOwnProperty(k) ) attributes[`-=${k}`] = null;
-    }
-
-    // Re-combine formData
-    formData = Object.entries(formData).filter(e => !e[0].startsWith("data.attributes")).reduce((obj, e) => {
-      obj[e[0]] = e[1];
-      return obj;
-    }, {_id: this.object._id, "data.attributes": attributes});
+    // TODO: Lets us intercept edits before sending to server?
 
     // Update the Item
     return this.object.update(formData);

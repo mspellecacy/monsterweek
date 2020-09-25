@@ -1,5 +1,6 @@
 /**
- * A simple and flexible system for world-building using an arbitrary collection of character and item attributes
+ * A simple and flexible system for world-building using an arbitrary collection
+ * of character and item attributes.
  * Author: Atropos
  * Software License: GNU GPLv3
  */
@@ -38,23 +39,6 @@ Hooks.once("init", async function() {
   Items.registerSheet("monsterweek", SimpleItemSheet, {
     types: ["weapon", "armor", "gear", "move"],
     makeDefault: true
-  });
-
-  // Register system settings
-  game.settings.register("monsterweek", "macroShorthand", {
-    name: "SETTINGS.SimpleMacroShorthandN",
-    hint: "SETTINGS.SimpleMacroShorthandL",
-    scope: "world",
-    type: Boolean,
-    default: true,
-    config: true
-  });
-
-  /**
-   * Slugify a string.
-   */
-  Handlebars.registerHelper('slugify', function(value) {
-    return value.slugify({strict: true});
   });
 
   /**

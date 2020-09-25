@@ -4,8 +4,7 @@
   "templates": {
     "common": {
       "background": "",
-      "type": "",
-      "attributes": {}
+      "type": ""
     },
     "creature": {
       "harm": {
@@ -55,7 +54,7 @@
         "max": 3
       }
     },
-    "holds": {}
+    "holds": ""
   },
   "bystander": {
     "templates": ["common", "creature"]
@@ -74,8 +73,7 @@
   "types": ["weapon", "armor", "gear", "move"],
   "templates": {
     "common": {
-      "description": "",
-      "attributes": {}
+      "description": ""
     },
     "object": {
       "quantity": 1,
