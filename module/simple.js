@@ -59,6 +59,7 @@ Hooks.once("init", async function() {
 
   /**
    * Concatenate multiple strings and variables.
+   * From https://stackoverflow.com/a/35862620
    */
   Handlebars.registerHelper('concat', function() {
     var arg = Array.prototype.slice.call(arguments,0);

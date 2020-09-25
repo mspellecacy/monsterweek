@@ -3,7 +3,7 @@
   "types": ["hunter", "bystander", "location", "minion", "monster"],
   "templates": {
     "common": {
-      "biography": "",
+      "background": "",
       "type": "",
       "attributes": {}
     },

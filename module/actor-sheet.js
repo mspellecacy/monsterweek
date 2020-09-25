@@ -13,7 +13,7 @@ export class SimpleActorSheet extends ActorSheet {
   	  template: "systems/monsterweek/templates/actor-sheet.html",
       width: 600,
       height: 600,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
+      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "moves"}],
       dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
     });
   }
@@ -29,7 +29,55 @@ export class SimpleActorSheet extends ActorSheet {
       attr.isResource = attr.dtype === "Resource";
     }
     data.shorthand = !!game.settings.get("monsterweek", "macroShorthand");
+
+    // Split the Hunter's items into groups.
+    if (this.actor.data.type == 'hunter') {
+      this._prepareHunterItems(data);
+    }
+
     return data;
+  }
+
+  /**
+   * Organize and classify Items for Hunter sheets.
+   *
+   * @param {Object} actorData The actor to prepare.
+   *
+   * @return {undefined}
+   */
+  _prepareHunterItems(sheetData) {
+    const actorData = sheetData.actor;
+
+    // Initialize containers.
+    const weapons = [];
+    const armor = [];
+    const gear = [];
+    const moves = [];
+
+    // Iterate through items, allocating to containers
+    for (let i of sheetData.items) {
+      let item = i.data;
+      i.img = i.img || DEFAULT_TOKEN;
+      if (i.type === 'weapon') {
+        weapons.push(i);
+      }
+      else if (i.type === 'armor') {
+        armor.push(i);
+      }
+      else if (i.type === 'gear') {
+        gear.push(i);
+      }
+      else if (i.type === 'move') {
+        moves.push(i);
+      }
+    }
+
+    // TODO: Sort each list by name
+
+    actorData.weapons = weapons;
+    actorData.armor = armor;
+    actorData.gear = gear;
+    actorData.moves = moves;
   }
 
   /* -------------------------------------------- */

@@ -6,6 +6,11 @@
   "SIMPLE.ResourceValue": "Value",
   "SIMPLE.ResourceMax": "Max",
 
+  "SIMPLE.Moves": "Moves",
+  "SIMPLE.Gear": "Gear",
+  "SIMPLE.Background": "Background",
+  "SIMPLE.Notes": "Notes",
+
   "SIMPLE.cool": "Cool",
   "SIMPLE.tough": "Tough",
   "SIMPLE.charm": "Charm",

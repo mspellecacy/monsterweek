@@ -9,7 +9,7 @@
   overflow-y: hidden;
 }
 .monsterweek .sheet-header {
-  height: 100px;
+  height: 110px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
