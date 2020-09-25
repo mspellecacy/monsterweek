@@ -4,5 +4,11 @@
 
   "SIMPLE.ResourceMin": "Min",
   "SIMPLE.ResourceValue": "Value",
-  "SIMPLE.ResourceMax": "Max"
+  "SIMPLE.ResourceMax": "Max",
+
+  "SIMPLE.cool": "Cool",
+  "SIMPLE.tough": "Tough",
+  "SIMPLE.charm": "Charm",
+  "SIMPLE.sharp": "Sharp",
+  "SIMPLE.weird": "Weird"
 }

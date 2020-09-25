@@ -5,6 +5,19 @@
         <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
         <div class="header-fields">
             <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+            {{!-- Ratings: Cool, Tough, etc. --}}
+            <div class="flexrow ratings">
+                {{#each data.ratings as |rating id|}}
+                <div class="rating">
+                    <label><a>{{localize (concat "SIMPLE." id)}}</a></label>
+                    <input
+                      type="text"
+                      name="data.ratings.{{id}}.value"
+                      value="{{rating.value}}"
+                      data-dtype="Number"/>
+                </div>
+                {{/each}}
+            </div>
             <div class="resource">
                 <input type="text" name="data.health.value" value="{{data.health.value}}" data-dtype="Number"/>
                 <span> / </span>

@@ -57,6 +57,15 @@ Hooks.once("init", async function() {
     return value.slugify({strict: true});
   });
 
+  /**
+   * Concatenate multiple strings and variables.
+   */
+  Handlebars.registerHelper('concat', function() {
+    var arg = Array.prototype.slice.call(arguments,0);
+    arg.pop();
+    return arg.join('');
+  });
+
   // Preload template partials.
   preloadHandlebarsTemplates();
 });
