@@ -1,13 +1,26 @@
 <!-- attributeName=harm attribute=data.harm -->
 <div class="track">
-    <span class="track-{{attributeName}} marked">
-        {{#times attribute.value}}
-        [X]
-        {{/times}}
-    </span>
-    <span class="track-{{attributeName}} unmarked">
-        {{#times (sub attribute.max attribute.value)}}
-        [_]
-        {{/times}}
-    </span>
+    {{log this}}
+    {{#if (isBoolean attribute)}}
+        {{#if attribute}}
+            <span class="track-{{attributeName}} marked">
+                [X]
+            </span>
+        {{else}}
+            <span class="track-{{attributeName}} unmarked">
+                [_]
+            </span>
+        {{/if}}
+    {{else}}
+        <span class="track-{{attributeName}} marked">
+            {{#times attribute.value}}
+            [X]
+            {{/times}}
+        </span>
+        <span class="track-{{attributeName}} unmarked">
+            {{#times (sub attribute.max attribute.value)}}
+            [_]
+            {{/times}}
+        </span>
+    {{/if}}
 </div>

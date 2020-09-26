@@ -32,7 +32,15 @@
                 value="{{data.harm.value}}"
                 data-dtype="Number"/>
         </div>
-        <div>Unstable</div>
+        <div>
+            <label>Unstable</label>
+            {{> "systems/monsterweek/templates/parts/track.html" attributeName="unstable" attribute=data.unstable}}
+            <input
+                type="checkbox"
+                name="data.unstable"
+                value="{{data.unstable}}"
+                data-dtype="Boolean"/>
+        </div>
         <div>
             <label>Luck</label>
             {{> "systems/monsterweek/templates/parts/track.html" attributeName="luck" attribute=data.luck}}

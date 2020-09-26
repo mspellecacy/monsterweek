@@ -70,6 +70,13 @@ Hooks.once("init", async function() {
     return a - b;
   });
 
+  /**
+   * Returns true if the argument is a boolean.
+   */
+  Handlebars.registerHelper('isBoolean', function(o) {
+    return typeof o === "boolean"
+  });
+
   // Preload template partials.
   preloadHandlebarsTemplates();
 });
