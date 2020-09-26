@@ -6,6 +6,7 @@
   height: 100%;
   padding: 5px;
   overflow-y: hidden;
+  background: url("/systems/monsterweek/images/ui/paper-512.jpg") repeat;
 }
 .monsterweek .sheet-header {
   height: 110px;
