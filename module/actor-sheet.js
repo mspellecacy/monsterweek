@@ -22,8 +22,8 @@ export class SimpleActorSheet extends ActorSheet {
   getData() {
     const data = super.getData();
 
-    // Split the Hunter's items into groups.
     if (this.actor.data.type == 'hunter') {
+      this._prepareHunterRatings(data);
       this._prepareHunterItems(data);
     }
 
@@ -31,9 +31,26 @@ export class SimpleActorSheet extends ActorSheet {
   }
 
   /**
+   * Adds '+' in front of positive ratings.
+   *
+   * @param {Object} sheetData The sheet containing the actor to prepare.
+   */
+  _prepareHunterRatings(sheetData) {
+    let ratings = sheetData.actor.data.ratings;
+    for (let key in ratings) {
+      if (ratings.hasOwnProperty(key)) {
+        let rating = ratings[key];
+        if (rating.hasOwnProperty("value") && rating.value > 0) {
+          rating.value = "+" + rating.value;
+        }
+      }
+    }
+  }
+
+  /**
    * Organize and classify Items for Hunter sheets.
    *
-   * @param {Object} actorData The actor to prepare.
+   * @param {Object} sheetData The sheet containing the actor to prepare.
    *
    * @return {undefined}
    */
@@ -123,7 +140,8 @@ export class SimpleActorSheet extends ActorSheet {
 
   /** @override */
   _updateObject(event, formData) {
-    // TODO: Lets us intercept edits before sending to server?
+    // TODO: Lets us intercept edits before sending to the server.
+    // formData contains name:value pairs from <input> elements etc. in the form.
 
     // Update the Actor
     return this.object.update(formData);
