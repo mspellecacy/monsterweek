@@ -51,6 +51,25 @@ Hooks.once("init", async function() {
     return arg.join('');
   });
 
+  /**
+   * Repeat a block N times.
+   * From https://stackoverflow.com/a/11924998
+   */
+  Handlebars.registerHelper('times', function(n, block) {
+    var accum = '';
+    for(var i = 0; i < n; ++i) {
+        accum += block.fn(i);
+    }
+    return accum;
+  });
+
+  /**
+   * Subtract a number from another.
+   */
+  Handlebars.registerHelper('sub', function(a, b) {
+    return a - b;
+  });
+
   // Preload template partials.
   preloadHandlebarsTemplates();
 });

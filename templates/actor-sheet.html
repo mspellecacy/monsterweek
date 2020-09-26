@@ -23,11 +23,34 @@
 
     {{!-- Hunter Status --}}
     <section class="hunter-status flexrow">
-        <div>Harm</div>
+        <div>
+            <label>Harm</label>
+            {{> "systems/monsterweek/templates/parts/track.html" attributeName="harm" attribute=data.harm}}
+            <input
+                type="text"
+                name="data.harm.value"
+                value="{{data.harm.value}}"
+                data-dtype="Number"/>
+        </div>
         <div>Unstable</div>
-        <div>Luck</div>
-        <div>Experience</div>
-        <div>Level</div>
+        <div>
+            <label>Luck</label>
+            {{> "systems/monsterweek/templates/parts/track.html" attributeName="luck" attribute=data.luck}}
+            <input
+                type="text"
+                name="data.luck.value"
+                value="{{data.luck.value}}"
+                data-dtype="Number"/>
+        </div>
+        <div>
+            <label>Experience</label>
+            {{> "systems/monsterweek/templates/parts/track.html" attributeName="experience" attribute=data.experience}}
+            <input
+                type="text"
+                name="data.experience.value"
+                value="{{data.experience.value}}"
+                data-dtype="Number"/>
+        </div>
     </section>
 
     {{!-- Sheet Tab Navigation --}}

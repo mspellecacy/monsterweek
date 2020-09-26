@@ -1,0 +1,13 @@
+<!-- attributeName=harm attribute=data.harm -->
+<div class="track">
+    <span class="track-{{attributeName}} marked">
+        {{#times attribute.value}}
+        [X]
+        {{/times}}
+    </span>
+    <span class="track-{{attributeName}} unmarked">
+        {{#times (sub attribute.max attribute.value)}}
+        [_]
+        {{/times}}
+    </span>
+</div>
