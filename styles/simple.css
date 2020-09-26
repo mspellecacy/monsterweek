@@ -79,6 +79,9 @@
 .monsterweek .editor-content {
   height: 100%;
 }
+.monsterweek img {
+  background-color: black;
+}
 .monsterweek .item-list {
   list-style: none;
   margin: 7px 0;

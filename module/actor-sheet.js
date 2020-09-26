@@ -94,16 +94,14 @@ export class SimpleActorSheet extends ActorSheet {
 	activateListeners(html) {
     super.activateListeners(html);
 
-    // Handle rollable attributes.
-    html.find('.items .rollable').click(ev => {
+    // Roll when clicking the name of a rating.
+    html.find('.rating .rollable').click(ev => {
       let button = $(ev.currentTarget);
       let r = new Roll(button.data('roll'), this.actor.getRollData());
-      const li = button.parents(".item");
-      const item = this.actor.getOwnedItem(li.data("itemId"));
       r.roll().toMessage({
         user: game.user._id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3>`
+        flavor: `<h2>${button.text()}</h2>`
       });
     });
 

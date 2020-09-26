@@ -9,7 +9,7 @@
             <div class="flexrow ratings">
                 {{#each data.ratings as |rating id|}}
                 <div class="rating">
-                    <label><a>{{localize (concat "SIMPLE." id)}}</a></label>
+                    <label><a class="rollable" data-roll="2d6 + {{rating.value}}">{{localize (concat "SIMPLE." id)}}</a></label>
                     <input
                       type="text"
                       name="data.ratings.{{id}}.value"

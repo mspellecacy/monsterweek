@@ -8,6 +8,7 @@ export class SimpleActor extends Actor {
   getRollData() {
     // TODO: "Prepare a data object which defines the data schema used by dice
     //     roll commands against this Actor"
+    const data = super.getRollData();
     return data;
   }
 }
