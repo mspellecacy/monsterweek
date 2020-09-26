@@ -36,16 +36,23 @@
   height: 100%;
   margin: 0;
 }
-.monsterweek .resource {
-  width: 50%;
-  height: 40px;
-  margin-top: 10px;
-  float: left;
+.monsterweek .hunter-status {
+  height: 110px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.monsterweek .rating {
   text-align: center;
 }
-.monsterweek .resource input {
-  width: 100px;
-  height: 28px;
+.monsterweek .rating label {
+  font-weight: bold;
+}
+.monsterweek .rating input {
+  border: none;
 }
 .monsterweek .tabs {
   height: 40px;

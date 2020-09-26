@@ -40,15 +40,26 @@
     }
   }
 
-  .resource {
-    width: 50%;
-    height: 40px;
-    margin-top: 10px;
-    float: left;
+  .hunter-status {
+    @hunter-status-height: 110px;
+
+    height: @hunter-status-height;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+
+  }
+
+  .rating {
     text-align: center;
+    label {
+      font-weight: bold;
+    }
     input {
-      width: 100px;
-      height: 28px;
+      border: none;
     }
   }
 

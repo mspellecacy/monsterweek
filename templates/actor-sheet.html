@@ -18,18 +18,17 @@
                 </div>
                 {{/each}}
             </div>
-            <div class="resource">
-                <input type="text" name="data.health.value" value="{{data.health.value}}" data-dtype="Number"/>
-                <span> / </span>
-                <input type="text" name="data.health.max" value="{{data.health.max}}" data-dtype="Number"/>
-            </div>
-            <div class="resource">
-                <input type="text" name="data.power.value" value="{{data.power.value}}" data-dtype="Number"/>
-                <span> / </span>
-                <input type="text" name="data.power.max" value="{{data.power.max}}" data-dtype="Number"/>
-            </div>
         </div>
     </header>
+
+    {{!-- Hunter Status --}}
+    <section class="hunter-status flexrow">
+        <div>Harm</div>
+        <div>Unstable</div>
+        <div>Luck</div>
+        <div>Experience</div>
+        <div>Level</div>
+    </section>
 
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
