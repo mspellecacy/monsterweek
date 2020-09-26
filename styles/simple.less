@@ -6,7 +6,9 @@
   }
 
   .sheet-header {
-    height: 100px;
+    @sheet-header-height: 110px;
+
+    height: @sheet-header-height;
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -15,18 +17,18 @@
     margin-bottom: 10px;
 
     .profile-img {
-      flex: 0 0 100px;
-      height: 100px;
+      flex: 0 0 @sheet-header-height;
+      height: @sheet-header-height;
       margin-right: 10px;
     }
 
     .header-fields {
       flex: 1;
-      height: 100px;
+      height: @sheet-header-height;
     }
 
     h1.charname {
-      height: 50px;
+      height: @sheet-header-height / 2;
       padding: 0px;
       margin: 5px 0;
       border-bottom: 0;
@@ -123,6 +125,7 @@
       width: auto;
     }
   }
+}
 
 .monsterweek.sheet.actor {
   min-width: 560px;

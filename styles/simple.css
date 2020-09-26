@@ -17,16 +17,16 @@
   margin-bottom: 10px;
 }
 .monsterweek .sheet-header .profile-img {
-  flex: 0 0 100px;
-  height: 100px;
+  flex: 0 0 110px;
+  height: 110px;
   margin-right: 10px;
 }
 .monsterweek .sheet-header .header-fields {
   flex: 1;
-  height: 100px;
+  height: 110px;
 }
 .monsterweek .sheet-header h1.charname {
-  height: 50px;
+  height: 55px;
   padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
