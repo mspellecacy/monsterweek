@@ -4,22 +4,23 @@
     {{#if (isBoolean attribute)}}
         {{#if attribute}}
             <span class="track-{{attributeName}} marked">
-                [X]
+                <i class="fas fa-square"></i>
             </span>
         {{else}}
             <span class="track-{{attributeName}} unmarked">
-                [_]
+                <i class="far fa-square"></i>
             </span>
         {{/if}}
     {{else}}
         <span class="track-{{attributeName}} marked">
             {{#times attribute.value}}
-            [X]
+                <i class="fas fa-square"></i>
             {{/times}}
         </span>
+        {{!-- TODO: Support a harm bar between 3 & 4 --}}
         <span class="track-{{attributeName}} unmarked">
             {{#times (sub attribute.max attribute.value)}}
-            [_]
+                <i class="far fa-square"></i>
             {{/times}}
         </span>
     {{/if}}
