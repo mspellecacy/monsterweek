@@ -52,22 +52,23 @@ Hooks.once("init", async function() {
   });
 
   /**
-   * Repeat a block N times.
-   * From https://stackoverflow.com/a/11924998
+   * Repeat a block N times, setting `timesIndex` to the index of each
+   * iteration. From https://stackoverflow.com/a/11924998
    */
   Handlebars.registerHelper('times', function(n, block) {
     var accum = '';
     for(var i = 0; i < n; ++i) {
-        accum += block.fn(i);
+        this.timesIndex = i;
+        accum += block.fn(this);
     }
     return accum;
   });
 
   /**
-   * Subtract a number from another.
+   * Return true if one value is less than another.
    */
-  Handlebars.registerHelper('sub', function(a, b) {
-    return a - b;
+  Handlebars.registerHelper('lt', function(a, b) {
+    return a < b;
   });
 
   /**

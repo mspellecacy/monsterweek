@@ -1,6 +1,5 @@
 <!-- attributeName=harm attribute=data.harm -->
 <div class="track">
-    {{log this}}
     {{#if (isBoolean attribute)}}
         {{#if attribute}}
             <span class="track-{{attributeName}} marked">
@@ -12,16 +11,17 @@
             </span>
         {{/if}}
     {{else}}
-        <span class="track-{{attributeName}} marked">
-            {{#times attribute.value}}
-                <i class="fas fa-square"></i>
-            {{/times}}
-        </span>
+        {{#times attribute.max}}
         {{!-- TODO: Support a harm bar between 3 & 4 --}}
-        <span class="track-{{attributeName}} unmarked">
-            {{#times (sub attribute.max attribute.value)}}
-                <i class="far fa-square"></i>
-            {{/times}}
-        </span>
+            {{#if (lt timesIndex attribute.value)}}
+                <span class="track-{{attributeName}} marked">
+                    <i class="fas fa-square"></i>
+                </span>
+            {{else}}
+                <span class="track-{{attributeName}} unmarked">
+                    <i class="far fa-square"></i>
+                </span>
+            {{/if}}
+        {{/times}}
     {{/if}}
 </div>
