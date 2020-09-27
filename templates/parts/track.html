@@ -1,27 +1,28 @@
-<!-- attributeName=harm attribute=data.harm -->
-<div class="track">
-    {{#if (isBoolean attribute)}}
-        {{#if attribute}}
-            <span class="track-{{attributeName}} marked">
+{{!-- Example usage: valueName="harm" value=data.harm --}}
+<a class="track" data-value-name="{{valueName}}">
+    {{#if (isBoolean value)}}
+        {{#if value}}
+            <span class="track-element marked">
                 <i class="fas fa-square"></i>
             </span>
         {{else}}
-            <span class="track-{{attributeName}} unmarked">
+            <span class="track-element unmarked">
                 <i class="far fa-square"></i>
             </span>
         {{/if}}
     {{else}}
-        {{#times attribute.max}}
+        {{!-- It's a {min, value, max} object. --}}
         {{!-- TODO: Support a harm bar between 3 & 4 --}}
-            {{#if (lt timesIndex attribute.value)}}
-                <span class="track-{{attributeName}} marked">
+        {{#times value.max}}
+            {{#if (lt timesIndex value.value)}}
+                <span class="track-element marked">
                     <i class="fas fa-square"></i>
                 </span>
             {{else}}
-                <span class="track-{{attributeName}} unmarked">
+                <span class="track-element unmarked">
                     <i class="far fa-square"></i>
                 </span>
             {{/if}}
         {{/times}}
     {{/if}}
-</div>
+</a>

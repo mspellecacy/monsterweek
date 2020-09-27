@@ -25,39 +25,19 @@
     <section class="hunter-status flexrow">
         <div>
             <label>Harm</label>
-            {{> "systems/monsterweek/templates/parts/track.html" attributeName="harm" attribute=data.harm}}
-            <input
-                type="text"
-                name="data.harm.value"
-                value="{{data.harm.value}}"
-                data-dtype="Number"/>
+            {{> "systems/monsterweek/templates/parts/track.html" valueName="harm" value=data.harm}}
         </div>
         <div>
             <label>Unstable</label>
-            {{> "systems/monsterweek/templates/parts/track.html" attributeName="unstable" attribute=data.unstable}}
-            <input
-                type="checkbox"
-                name="data.unstable"
-                value="{{data.unstable}}"
-                data-dtype="Boolean"/>
+            {{> "systems/monsterweek/templates/parts/track.html" valueName="unstable" value=data.unstable}}
         </div>
         <div>
             <label>Luck</label>
-            {{> "systems/monsterweek/templates/parts/track.html" attributeName="luck" attribute=data.luck}}
-            <input
-                type="text"
-                name="data.luck.value"
-                value="{{data.luck.value}}"
-                data-dtype="Number"/>
+            {{> "systems/monsterweek/templates/parts/track.html" valueName="luck" value=data.luck}}
         </div>
         <div>
             <label>Experience</label>
-            {{> "systems/monsterweek/templates/parts/track.html" attributeName="experience" attribute=data.experience}}
-            <input
-                type="text"
-                name="data.experience.value"
-                value="{{data.experience.value}}"
-                data-dtype="Number"/>
+            {{> "systems/monsterweek/templates/parts/track.html" valueName="experience" value=data.experience}}
         </div>
     </section>
 

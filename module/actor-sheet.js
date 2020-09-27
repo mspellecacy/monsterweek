@@ -108,6 +108,13 @@ export class SimpleActorSheet extends ActorSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
+    // Handle clicks on "track" elements and update the underlying values.
+    html.find(".track-element").click(ev => {
+      const valueName = $(ev.currentTarget).parents(".track").data("valueName");
+      const delta = ev.currentTarget.classList.contains("marked") ? -1 : 1;
+      this.actor.modifyValue(valueName, delta);
+    });
+
     // Update Inventory Item
     html.find('.item-edit').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
