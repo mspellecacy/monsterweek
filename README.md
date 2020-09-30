@@ -17,6 +17,13 @@ TODO:
     https://www.myfonts.com/fonts/adobe/warnock/bold-capt/
     - https://www.dafont.com/sling.font
     - https://www.dafont.com/isle-body.font
+- Copyright fields for core text?
+- Luck:
+  - Add a spot for the hunter luck rules; maybe pop it up when clicking
+    the "Luck" label. E.g., "Crooked special: Whenever you spend a Luck point,
+    someone from your past will re-appear in your life. Soon."
+    (See "updated luck rules" playbooks at
+    https://www.evilhat.com/home/monster-of-the-week-resources/)
 - Moves:
   - Structure the 10+/7-9/fail text so it can be displayed in chat
   - Would be cool to automatically add holds, though that could get
@@ -32,7 +39,12 @@ TODO:
     of thing for them. Could still appear in the Moves tab, just under
     a Rotes section
   - Pararomantic's "Relationship status" track
+  - Spell-slinger has spells with tags, and some provide both harm and
+    armor. A new category beyond armor/weapon/gear? Or do we mix them
+    all together and maybe cluster by "magic", "#-harm", "#-armor", etc.
 - Armor
   - Would be nice to roll up all armor into a single top-level view,
     adding all N-armor and highlight tags like 'magic'. Clicking on it
     would switch to the gear/armor tab.
+- Misc
+  - Big "DOOMED" stamp across avatar when luck is completely full
