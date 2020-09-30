@@ -12,5 +12,9 @@
   "SIMPLE.tough": "Tough",
   "SIMPLE.charm": "Charm",
   "SIMPLE.sharp": "Sharp",
-  "SIMPLE.weird": "Weird"
+  "SIMPLE.weird": "Weird",
+
+  "SIMPLE.TotalSuccess": "Total success",
+  "SIMPLE.MixedSuccess": "Mixed success",
+  "SIMPLE.Failure": "Failure"
 }

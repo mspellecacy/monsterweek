@@ -22,6 +22,10 @@ TODO:
   - Would be cool to automatically add holds, though that could get
     annoying if most of the holds are used immediately; may be better
     to do it in chat with a button to remember the hold for later.
+  - Some gear can provide custom moves. Would be nice if owning that gear
+    added the move to the owner's list.
+  - Leveling up can change basic moves to Advanced Moves (p122) which gives
+    them extra effects on 12+.
 - Hunter specials
   - The Hex's Rotes (spells). Could treat them as special
     moves, since they follow from Use Magic, or could create a new type

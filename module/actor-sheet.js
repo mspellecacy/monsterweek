@@ -97,11 +97,21 @@ export class SimpleActorSheet extends ActorSheet {
     // Roll when clicking the name of a rating.
     html.find('.rating .rollable').click(ev => {
       let button = $(ev.currentTarget);
-      let r = new Roll(button.data('roll'), this.actor.getRollData());
-      r.roll().toMessage({
+      let r = new Roll(button.data('roll'), this.actor.getRollData()).roll();
+
+      var tier;
+      if (r.total >= 10) {
+        tier = game.i18n.localize("SIMPLE.TotalSuccess");
+      } else if (r.total >= 7) {
+        tier = game.i18n.localize("SIMPLE.MixedSuccess");
+      } else {
+        tier = game.i18n.localize("SIMPLE.Failure");
+      }
+
+      r.toMessage({
         user: game.user._id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h2>${button.text()}</h2>`
+        flavor: `<h2>${button.text()}</h2><i>${tier}</i>`
       });
     });
 
