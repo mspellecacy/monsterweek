@@ -1,20 +1,28 @@
 {
-  "SIMPLE.ResourceMin": "Min",
-  "SIMPLE.ResourceValue": "Value",
-  "SIMPLE.ResourceMax": "Max",
+  "SIMPLE.ResourceMin": "Min-",
+  "SIMPLE.ResourceValue": "Value-",
+  "SIMPLE.ResourceMax": "Max-",
 
-  "SIMPLE.Moves": "Moves",
-  "SIMPLE.Gear": "Gear",
-  "SIMPLE.BonusesAndHolds": "Bonuses/Holds",
-  "SIMPLE.Background": "Background",
+  "SIMPLE.Moves": "Moves-",
+  "SIMPLE.Gear": "Gear-",
+  "SIMPLE.BonusesAndHolds": "Bonuses/Holds-",
+  "SIMPLE.Background": "Background-",
 
-  "SIMPLE.cool": "Cool",
-  "SIMPLE.tough": "Tough",
-  "SIMPLE.charm": "Charm",
-  "SIMPLE.sharp": "Sharp",
-  "SIMPLE.weird": "Weird",
+  "SIMPLE.cool": "Cool-",
+  "SIMPLE.tough": "Tough-",
+  "SIMPLE.charm": "Charm-",
+  "SIMPLE.sharp": "Sharp-",
+  "SIMPLE.weird": "Weird-",
 
-  "SIMPLE.TotalSuccess": "Total success",
-  "SIMPLE.MixedSuccess": "Mixed success",
-  "SIMPLE.Failure": "Failure"
+  "SIMPLE.Harm": "Harm-",
+  "SIMPLE.Okay": "Okay-",
+  "SIMPLE.Dying": "Dying-",
+  "SIMPLE.Unstable": "Unstable-",
+  "SIMPLE.Luck": "Luck-",
+  "SIMPLE.Doomed": "Doomed-",
+  "SIMPLE.Experience": "Experience-",
+
+  "SIMPLE.TotalSuccess": "Total success-",
+  "SIMPLE.MixedSuccess": "Mixed success-",
+  "SIMPLE.Failure": "Failure-"
 }

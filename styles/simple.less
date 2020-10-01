@@ -41,19 +41,6 @@
     }
   }
 
-  .hunter-status {
-    @hunter-status-height: 110px;
-
-    height: @hunter-status-height;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-bottom: 10px;
-
-  }
-
   .rating {
     text-align: center;
     label {
@@ -62,6 +49,21 @@
     input {
       border: none;
     }
+  }
+
+  .hunter-status {
+    overflow: hidden;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+    padding: 0 10px;
+
+    label.header {
+      font-weight: bold;
+    }
+  }
+
+  .track {
+    white-space: nowrap;  // Don't break between boxes
   }
 
   /* Sheet Tabs */
