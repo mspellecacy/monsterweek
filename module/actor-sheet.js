@@ -11,7 +11,18 @@ export class SimpleActorSheet extends ActorSheet {
   	  template: "systems/monsterweek/templates/actor-sheet.html",
       width: 600,
       height: 600,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "moves"}],
+      tabs: [
+        {
+          navSelector: ".tab-nav-left",
+          contentSelector: ".tab-content-left",
+          initial: "moves",
+        },
+        {
+          navSelector: ".tab-nav-right",
+          contentSelector: ".tab-content-right",
+          initial: "gear",
+        },
+      ],
       dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
     });
   }
