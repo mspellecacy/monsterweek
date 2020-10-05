@@ -68,7 +68,6 @@ export class SimpleActorSheet extends ActorSheet {
   _prepareHunterItems(sheetData) {
     const actorData = sheetData.actor;
 
-    // Initialize containers.
     const weapons = [];
     const armor = [];
     const gear = [];
@@ -91,12 +90,13 @@ export class SimpleActorSheet extends ActorSheet {
       }
     }
 
-    // TODO: Sort each list by name
-
-    actorData.weapons = weapons;
-    actorData.armor = armor;
-    actorData.gear = gear;
     actorData.moves = moves;
+    actorData.allGear = [
+      // Labels must correspond to SIMPLE.${label} localizable strings.
+      {"label": "Weapons", "items": weapons},
+      {"label": "Armor", "items": armor},
+      {"label": "Gear", "items": gear},
+    ];
   }
 
   /* -------------------------------------------- */
