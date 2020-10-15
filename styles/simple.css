@@ -71,6 +71,12 @@
   text-decoration: underline;
   text-shadow: none;
 }
+.monsterweek .tab-group-separator {
+  height: 100%;
+  width: 5px;
+  flex: 0;
+  background-color: #F00;
+}
 .monsterweek .sheet-body {
   overflow: hidden;
 }
