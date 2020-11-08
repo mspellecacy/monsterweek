@@ -58,10 +58,8 @@
 .monsterweek .track {
   white-space: nowrap;
 }
-.monsterweek .tabs {
-  height: 40px;
+.monsterweek .sheet-body {
   border-top: 1px solid #AAA;
-  border-bottom: 1px solid #AAA;
 }
 .monsterweek .tabs .item {
   line-height: 40px;
@@ -77,12 +75,6 @@
 .monsterweek .tab-content .tab {
   height: 100%;
   overflow-y: auto;
-}
-.monsterweek .tab-group-separator {
-  height: 100%;
-  width: 5px;
-  flex: 0;
-  background-color: #F00;
 }
 .monsterweek .editor,
 .monsterweek .editor-content {
