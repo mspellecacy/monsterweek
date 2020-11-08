@@ -83,6 +83,31 @@
 .monsterweek img {
   background-color: black;
 }
+.monsterweek .inventory-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 5px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: #7a7971;
+}
+.monsterweek .inventory-list .inventory-header {
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove #eeede0;
+  font-weight: bold;
+  line-height: 24px;
+}
+.monsterweek .inventory-list .inventory-header h3 {
+  margin: 0 -5px 0 0;
+  padding-left: 5px;
+  color: #191813;
+  font-size: 20px;
+  font-weight: 700;
+  font-size: 16px;
+}
 .monsterweek .item-list {
   list-style: none;
   margin: 7px 0;
@@ -102,6 +127,7 @@
 }
 .monsterweek .item-list .item-name {
   margin: 0;
+  color: #191813;
 }
 .monsterweek .item-list .item-controls {
   flex: 0 0 36px;

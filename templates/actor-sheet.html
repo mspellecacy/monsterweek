@@ -74,18 +74,20 @@
             <div class="tab-content tab-content-left">
                 {{!-- Moves Tab --}}
                 <div class="tab moves" data-group="left" data-tab="moves">
-                    <ol class="item-list">
-                    {{#each actor.moves as |item id|}}
-                        <li class="item flexrow" data-item-id="{{item._id}}">
-                            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-                            <h4 class="item-name">{{item.name}}</h4>
-                            <div class="item-controls">
-                                <a class="item-control item-edit" title="Edit Move"><i class="fas fa-edit"></i></a>
-                                <a class="item-control item-delete" title="Delete Move"><i class="fas fa-trash"></i></a>
-                                {{!-- TODO: "Create Move" button --}}
-                            </div>
-                        </li>
-                    {{/each}}
+                    <ol class="inventory-list">
+                        <ol class="item-list">
+                        {{#each actor.moves as |item id|}}
+                            <li class="item flexrow" data-item-id="{{item._id}}">
+                                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                                <h4 class="item-name">{{item.name}}</h4>
+                                <div class="item-controls">
+                                    <a class="item-control item-edit" title="Edit Move"><i class="fas fa-edit"></i></a>
+                                    <a class="item-control item-delete" title="Delete Move"><i class="fas fa-trash"></i></a>
+                                    {{!-- TODO: "Create Move" button --}}
+                                </div>
+                            </li>
+                        {{/each}}
+                        </ol>
                     </ol>
                 </div>
 
@@ -117,7 +119,7 @@
                 <div class="tab gear" data-group="right" data-tab="gear">
                     <ol class="inventory-list">
                     {{#each actor.allGear as |section id|}}
-                        <li class="gear-header">
+                        <li class="inventory-header">
                             <h3 class="item flexrow">
                                 {{localize (concat "SIMPLE." section.label)}}
                             </h3>
