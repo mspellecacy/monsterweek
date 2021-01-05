@@ -27,7 +27,8 @@ export class SimpleItemSheet extends ItemSheet {
   getData() {
     const data = super.getData();
 
-    // TODO: Tweak data if necessary.
+    data.isMove = data.item.type === "move";
+    data.ratings = ["cool", "tough", "charm", "sharp", "weird"];
 
     return data;
   }

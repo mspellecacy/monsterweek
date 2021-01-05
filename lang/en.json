@@ -12,12 +12,17 @@
   "SIMPLE.Weapons": "Weapons",
   "SIMPLE.Armor": "Armor",
 
+  "SIMPLE.Rating": "Rating",
+  "SIMPLE.Quantity": "Quantity",
+  "SIMPLE.Tags": "Tags",
+
   "SIMPLE.cool": "Cool",
   "SIMPLE.tough": "Tough",
   "SIMPLE.charm": "Charm",
   "SIMPLE.sharp": "Sharp",
   "SIMPLE.weird": "Weird",
 
+  "SIMPLE.None": "None",
   "SIMPLE.Harm": "Harm",
   "SIMPLE.Okay": "Okay",
   "SIMPLE.Dying": "Dying",

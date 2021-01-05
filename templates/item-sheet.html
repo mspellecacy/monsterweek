@@ -3,13 +3,29 @@
         <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
         <div class="header-fields">
             <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
-            <div class="resource">
-            	<label>Quantity</label>
-                <input type="text" name="data.quantity" value="{{data.quantity}}" data-dtype="Number"/>
-            </div>
-            <div class="resource">
-            	<label>Weight</label>
-                <input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/>
+            <div class="flexrow">
+                {{#if isMove}}
+                <div class="resource">
+                    <label>{{localize "SIMPLE.Rating"}}</label>
+                    <select class="select-rating" name="data.rating" data-type="String">
+                        {{#select data.rating}}
+                        {{#each ratings as |rating|}}
+                        <option value="{{rating}}">{{localize (concat "SIMPLE." rating)}}</option>
+                        {{/each}}
+                        <option value="">({{localize "SIMPLE.None"}})</option>
+                        {{/select}}
+                    </select>
+                </div>
+                {{else}}
+                <div class="resource flex2">
+                    <label>{{localize "SIMPLE.Tags"}}</label>
+                    <input type="text" name="data.tags" value="{{data.tags}}" data-dtype="Text"/>
+                </div>
+                <div class="resource flex1">
+                    <label>{{localize "SIMPLE.Quantity"}}</label>
+                    <input type="text" name="data.quantity" value="{{data.quantity}}" data-dtype="Number"/>
+                </div>
+                {{/if}}
             </div>
         </div>
     </header>
