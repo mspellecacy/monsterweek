@@ -1,6 +1,6 @@
 {
   "name": "monsterweek",
-  "title": "Monster of the Week",
+  "title": "Monster/Week",
   "description": "A simple system for Monster of the Week.",
   "version": 0.1,
   "minimumCoreVersion": "0.5.6",
