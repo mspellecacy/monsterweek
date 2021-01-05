@@ -11,7 +11,13 @@ export class SimpleItemSheet extends ItemSheet {
 			template: "systems/monsterweek/templates/item-sheet.html",
 			width: 520,
 			height: 480,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}]
+      tabs: [
+        {
+          navSelector: ".sheet-tabs",
+          contentSelector: ".tab-content",
+          initial: "description"
+        }
+      ]
 		});
   }
 
@@ -28,12 +34,27 @@ export class SimpleItemSheet extends ItemSheet {
 
   /* -------------------------------------------- */
 
-  /** @override */
+  /**
+   * @override
+   * Called when the sheet window is moved or resized.
+   */
   setPosition(options={}) {
     const position = super.setPosition(options);
-    const sheetBody = this.element.find(".sheet-body");
-    const bodyHeight = position.height - 192;
-    sheetBody.css("height", bodyHeight);
+
+    // Let any tab bodies know that the viewport has changed.
+    const tabBodies = this.element.find(".tab-content .tab");
+    if (tabBodies.length > 0) {
+      // See how much of the window height belongs to the tabs. Assumes that all
+      // tab bodies have the same y position.
+      //
+      // Use the `offsetTop` of the tab body's parent element (typically a div
+      // that contains all bodies for the tab group) in case tab body zero is
+      // currently hidden. Note that this offset is relative to `this.element`
+      // since we looked up the tab using `this.element.find`.
+      const tabHeight = position.height - tabBodies[0].parentElement.offsetTop;
+      tabBodies.css("height", tabHeight);
+    }
+
     return position;
   }
 
