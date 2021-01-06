@@ -89,6 +89,10 @@ Hooks.once("init", async function() {
    * Splits a string using the provided separator string.
    */
   Handlebars.registerHelper('split', function(str, sep) {
+    if (!str) {
+      // empty, null, undefined, etc.
+      return [];
+    }
     let parts = str.split(sep);
     if (parts.length == 1 && parts[0] === "") {
       return [];
