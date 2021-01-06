@@ -79,6 +79,13 @@ Hooks.once("init", async function() {
   });
 
   /**
+   * Returns true if the argument string is non-empty.
+   */
+  Handlebars.registerHelper('isNonEmptyString', function(str) {
+    return str !== "";
+  });
+
+  /**
    * Splits a string using the provided separator string.
    */
   Handlebars.registerHelper('split', function(str, sep) {

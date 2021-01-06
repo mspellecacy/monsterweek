@@ -79,7 +79,13 @@
                         {{#each actor.moves as |item id|}}
                             <li class="item flexrow" data-item-id="{{item._id}}">
                                 <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-                                <h4 class="item-name">{{item.name}}</h4>
+                                <h4 class="item-name">
+                                    {{item.name}}
+                                    {{#if (isNonEmptyString item.data.rating)}}
+                                    {{!-- TODO: Make this chip roll with the rating --}}
+                                    <span class="chip">{{localize (concat "SIMPLE." item.data.rating)}}</span>
+                                    {{/if}}
+                                </h4>
                                 <div class="item-controls">
                                     <a class="item-control item-edit" title="Edit Move"><i class="fas fa-edit"></i></a>
                                     <a class="item-control item-delete" title="Delete Move"><i class="fas fa-trash"></i></a>
