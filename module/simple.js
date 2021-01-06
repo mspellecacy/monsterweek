@@ -78,6 +78,17 @@ Hooks.once("init", async function() {
     return typeof o === "boolean"
   });
 
+  /**
+   * Splits a string using the provided separator string.
+   */
+  Handlebars.registerHelper('split', function(str, sep) {
+    let parts = str.split(sep);
+    if (parts.length == 1 && parts[0] === "") {
+      return [];
+    }
+    return parts;
+  });
+
   // Preload template partials.
   preloadHandlebarsTemplates();
 });

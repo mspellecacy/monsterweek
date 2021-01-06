@@ -181,8 +181,8 @@ export class SimpleActorSheet extends ActorSheet {
 
   /** @override */
   _updateObject(event, formData) {
-    // TODO: Lets us intercept edits before sending to the server.
-    // formData contains name:value pairs from <input> elements etc. in the form.
+    // Lets us intercept edits before sending to the server.
+    // formData contains name/value pairs from <input> elements etc. in the form.
 
     // Update the Actor
     return this.object.update(formData);

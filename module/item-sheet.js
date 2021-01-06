@@ -76,7 +76,14 @@ export class SimpleItemSheet extends ItemSheet {
 
   /** @override */
   _updateObject(event, formData) {
-    // TODO: Lets us intercept edits before sending to server?
+    // Lets us intercept edits before sending to the server.
+    // formData contains name/value pairs from <input> elements etc. in the form.
+
+    // Remove extra leading/trailing/internal spaces from tags.
+    if (formData.hasOwnProperty("data.tags")) {
+      let tags = formData["data.tags"].replace(/\s+/g,' ').trim();
+      formData["data.tags"] = tags;
+    }
 
     // Update the Item
     return this.object.update(formData);

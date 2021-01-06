@@ -1,6 +1,7 @@
 .monsterweek {
   /* Sheet Tabs */
   /* Items List */
+  /* Chips */
 }
 .monsterweek .window-content {
   height: 100%;
@@ -145,6 +146,16 @@
   font-size: 11px;
   flex: none;
   width: auto;
+}
+.monsterweek .chip {
+  display: inline-block;
+  margin: 0 2px 0 0;
+  padding: 0 3px;
+  font-size: 12px;
+  line-height: 18px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.05);
 }
 .monsterweek.sheet.actor {
   min-width: 560px;
