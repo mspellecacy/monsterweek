@@ -1,7 +1,14 @@
 # Monster of the Week
 
-A simple, unofficial Foundry VTT system for [Monster of the
-Week](https://www.evilhat.com/home/monster-of-the-week/).
+A simple, unofficial [Foundry VTT](https://foundryvtt.com/) system for [Monster
+of the Week](https://www.evilhat.com/home/monster-of-the-week/).
+
+## Installing
+
+In your Foundry VTT instance, go to the Setup page, and add a system with the
+manifest URL https://gitlab.com/3cell/monsterweek/-/raw/motw/system.json
+
+## Overview
 
 Includes:
 
