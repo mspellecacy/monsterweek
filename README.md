@@ -1,7 +1,8 @@
 # Monster of the Week
 
-A simple, unofficial [Foundry VTT](https://foundryvtt.com/) system for [Monster
-of the Week](https://www.evilhat.com/home/monster-of-the-week/).
+A simple, unofficial [Foundry VTT](https://foundryvtt.com/) system for
+[Evil Hat Productions](https://www.evilhat.com/)'s [Monster of the
+Week](https://www.evilhat.com/home/monster-of-the-week/).
 
 ## Installing
 
@@ -34,7 +35,7 @@ my best. :)
 This system is released under the MIT license described in
 [LICENSE.txt](LICENSE.txt), and its copyright belongs to its contributors.
 
-Some text and concepts included in this system are copyright [Evil Hat
+Some text and concepts included in this system may be copyright [Evil Hat
 Productions](https://www.evilhat.com/).
 
 Forked from the [Simple Worldbuilding
@@ -48,10 +49,14 @@ Create by creating an actor, and choosing "hunter" as the type.
 
 ![Hunter sheet](docs/images/hunter-sheet.png)
 
-To roll, click the word "Cool", "Tough", "Charm", etc at the top of the sheet.
+To change the value of a rating ("Cool", "Tough", etc.), type in the number and
+hit enter. Rating values are restricted to the range from -1 to +3 based on the
+rules.
 
-To change the value of a rating, type in the number and hit enter. Rating values
-are restricted to the range from -1 to +3 based on the rules.
+To roll, click the rating word ("Cool", etc.) at the top of the sheet. The
+chat message will tell you what kind of success/failure it was.
+
+![Roll results in the chat window](docs/images/chat-roll.png)
 
 Increase or decrease marks on the Harm/Luck/etc. tracks by clicking on the left
 or right ends; no need to click on exactly the next box, though that works too.
@@ -82,9 +87,6 @@ sheet.
 
 ## Future features
 
-- Add a compendium pack for moves:
-  https://gitlab.com/foundrynet/dnd5e/-/blob/5d677c43/system.json#L10
-  - https://foundryvtt.com/api/Compendium.html
 - Fonts:
   - The book uses https://www.myfonts.com/fonts/protype/lavah-pro/grunge/
     - Similar free fonts: https://www.dafont.com/theme.php?cat=107
@@ -96,7 +98,6 @@ sheet.
     https://www.myfonts.com/fonts/adobe/warnock/bold-capt/
     - https://www.dafont.com/sling.font
     - https://www.dafont.com/isle-body.font
-- Copyright fields for core text?
 - Luck:
   - Add a spot for the hunter luck rules; maybe pop it up when clicking
     the "Luck" label. E.g., "Crooked special: Whenever you spend a Luck point,
