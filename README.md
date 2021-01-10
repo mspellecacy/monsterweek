@@ -66,7 +66,9 @@ of stuff that isn't fully supported by the system.
 
 ### Move
 
-Create by creating an item, and selecting "move" as the type.
+Create by using the "+" icon in the header of the Moves list on the Hunter
+sheet, or creating a new item in the "Items" chat tab and selecting "move" as
+the type.
 
 ![Move sheet](docs/images/move-sheet.png)
 
@@ -78,7 +80,9 @@ to roll without needing to open the move.
 
 ### Gear/Weapon/Armor
 
-Create by creating an item, and selecting "gear", "weapon", or "armor" as the type.
+Create by using the "+" icon in the headers of the Weapons/Armor/Gear sections
+on the Hunter sheet, or creating a new item in the "Items" chat tab and
+selecting "weapon"/"armor"/"gear" as the type.
 
 ![Gear sheet](docs/images/gear-sheet.png)
 

@@ -109,6 +109,15 @@
   font-weight: 700;
   font-size: 16px;
 }
+.monsterweek .inventory-list .item-controls {
+  flex: 0 0 18px;
+  justify-content: flex-end;
+}
+.monsterweek .inventory-list .item-controls a {
+  flex: 0 0 22px;
+  font-size: 12px;
+  text-align: center;
+}
 .monsterweek .item-list {
   list-style: none;
   margin: 7px 0;

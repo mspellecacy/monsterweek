@@ -12,6 +12,9 @@
   "SIMPLE.Weapons": "Weapons",
   "SIMPLE.Armor": "Armor",
 
+  "SIMPLE.Add": "Add",
+  "SIMPLE.NewItem": "New Item",
+
   "SIMPLE.Rating": "Rating",
   "SIMPLE.Quantity": "Quantity",
   "SIMPLE.Tags": "Tags",

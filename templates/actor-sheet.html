@@ -75,6 +75,16 @@
                 {{!-- Moves Tab --}}
                 <div class="tab moves" data-group="left" data-tab="moves">
                     <ol class="inventory-list">
+                        <li class="inventory-header flexrow">
+                            <h3 class="item">{{localize "SIMPLE.Moves"}}</h3>
+                            {{#if owner}}
+                            <div class="item-controls">
+                                <a class="item-control item-create" title='{{localize "SIMPLE.Add"}}' data-type="Moves">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </div>
+                            {{/if}}
+                        </li>
                         <ol class="item-list">
                         {{#each actor.moves as |item id|}}
                             <li class="item flexrow" data-item-id="{{item._id}}">
@@ -125,10 +135,17 @@
                 <div class="tab gear" data-group="right" data-tab="gear">
                     <ol class="inventory-list">
                     {{#each actor.allGear as |section id|}}
-                        <li class="inventory-header">
-                            <h3 class="item flexrow">
+                        <li class="inventory-header flexrow">
+                            <h3 class="item">
                                 {{localize (concat "SIMPLE." section.label)}}
                             </h3>
+                            {{#if ../owner}}
+                            <div class="item-controls">
+                                <a class="item-control item-create" title='{{localize "SIMPLE.Add"}}' data-type="{{section.label}}">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </div>
+                            {{/if}}
                         </li>
                         <ol class="item-list">
                         {{#each section.items as |item id|}}

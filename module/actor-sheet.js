@@ -136,6 +136,35 @@ export class SimpleActorSheet extends ActorSheet {
       this.actor.modifyValue(valueName, delta);
     });
 
+    // Add Inventory Item
+    html.find('.item-create').click(ev => {
+      ev.preventDefault();
+
+      // TODO: Consolidate this with the similar list in simple.js.
+      const DEFAULT_MOVE_ICON = "icons/svg/book.svg"
+      const DEFAULT_GEAR_ICON = "icons/svg/chest.svg";
+      const DEFAULT_WEAPON_ICON = "icons/svg/combat.svg";
+      const DEFAULT_ARMOR_ICON = "icons/svg/statue.svg";
+
+      // The incoming type will be a localization key like "Moves", but
+      // we need an item type like "move".
+      const headerType = $(ev.currentTarget).data("type");
+      const entry = {
+        Moves: { type: "move", img: DEFAULT_MOVE_ICON },
+        Weapons: { type: "weapon", img: DEFAULT_WEAPON_ICON },
+        Armor: { type: "armor", img: DEFAULT_ARMOR_ICON },
+        Gear: { type: "gear", img: DEFAULT_GEAR_ICON },
+      }[headerType];
+
+      const itemData = {
+        name: game.i18n.format("SIMPLE.NewItem"),
+        type: entry.type,
+        img: entry.img,
+        data: {},
+      };
+      return this.actor.createOwnedItem(itemData);
+    });
+
     // Update Inventory Item
     html.find('.item-edit').click(ev => {
       const li = $(ev.currentTarget).parents(".item");

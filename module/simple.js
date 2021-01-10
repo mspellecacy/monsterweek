@@ -110,6 +110,7 @@ Hooks.once("init", async function() {
 Hooks.on("createItem", item => {
   let MYSTERY_MAN_ICON = "icons/svg/mystery-man.svg";
 
+  // TODO: Consolidate this with the similar list in actor-sheet.js.
   let DEFAULT_GEAR_ICON = "icons/svg/chest.svg";
   let DEFAULT_WEAPON_ICON = "icons/svg/combat.svg";
   let DEFAULT_ARMOR_ICON = "icons/svg/statue.svg";
