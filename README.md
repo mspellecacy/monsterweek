@@ -2,19 +2,27 @@
 
 A simple, unofficial [Foundry VTT](https://foundryvtt.com/) system for
 [Evil Hat Productions](https://www.evilhat.com/)'s [Monster of the
-Week](https://www.evilhat.com/home/monster-of-the-week/).
+Week](https://www.evilhat.com/home/monster-of-the-week/). Created with
+permission from the publisher.
 
 ## Installing
 
-In your Foundry VTT instance, go to the Setup page, and add a system with the
-manifest URL https://gitlab.com/3cell/monsterweek/-/raw/motw/system.json
+In your Foundry VTT instance:
+
+- Enter "Setup" mode
+- Go to the "Game Systems" tab
+- Click "Install System"
+- In the "Filter Packages" field in the upper right, search for "Monster/Week"
+- Click "Install" on the entry that shows up
+
+See https://foundryvtt.com/packages/monsterweek/ for details about the Foundry package.
 
 ## Overview
 
 Includes:
 
 - Basic hunter/move/gear sheets
-- Rollable ratings: click on the Cool/Touch/Charm/etc. header on the hunter
+- Rollable ratings: click on the Cool/Tough/Charm/etc. header on the hunter
   sheet to see the roll in the chat window, with a header for "total success",
   "mixed success", or "failure".
 
