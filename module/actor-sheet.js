@@ -101,30 +101,40 @@ export class SimpleActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
+  /**
+   * Handles rolling a rating like "Cool" when clicking on its name.
+   * @private
+   */
+  _onRatingRoll(ev) {
+    let button = $(ev.currentTarget);
+    let r = new Roll(button.data('roll'), this.actor.getRollData()).roll();
+
+    var tier;
+    if (r.total >= 10) {
+      tier = game.i18n.localize("SIMPLE.TotalSuccess");
+    } else if (r.total >= 7) {
+      tier = game.i18n.localize("SIMPLE.MixedSuccess");
+    } else {
+      tier = game.i18n.localize("SIMPLE.Failure");
+    }
+
+    r.toMessage({
+      user: game.user._id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `<h2>${button.text()}</h2><i>${tier}</i>`
+    });
+  }
+
+  /* -------------------------------------------- */
+
   /** @override */
 	activateListeners(html) {
     super.activateListeners(html);
 
-    // Roll when clicking the name of a rating.
-    html.find('.rating .rollable').click(ev => {
-      let button = $(ev.currentTarget);
-      let r = new Roll(button.data('roll'), this.actor.getRollData()).roll();
-
-      var tier;
-      if (r.total >= 10) {
-        tier = game.i18n.localize("SIMPLE.TotalSuccess");
-      } else if (r.total >= 7) {
-        tier = game.i18n.localize("SIMPLE.MixedSuccess");
-      } else {
-        tier = game.i18n.localize("SIMPLE.Failure");
-      }
-
-      r.toMessage({
-        user: game.user._id,
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h2>${button.text()}</h2><i>${tier}</i>`
-      });
-    });
+    if (this.actor.owner) {
+      // Roll when clicking the name of a rating.
+      html.find('.rating .rollable').click(ev => this._onRatingRoll(ev));
+    }
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
