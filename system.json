@@ -9,7 +9,239 @@
   "author": "Dave Bort <git@dbort.com>",
   "esmodules": ["module/simple.js"],
   "styles": ["styles/simple.css"],
-  "packs": [],
+  "packs": [
+    {
+      "name": "playbook-templates",
+      "label": "Playbook Templates",
+      "system": "monsterweek",
+      "path": "./packs/playbook-templates.db",
+      "entity": "Actor"
+    },
+    {
+      "name": "basic-move-macros",
+      "label": "Basic Move Macros",
+      "system": "monsterweek",
+      "path": "./packs/basic-move-macros.db",
+      "entity": "Macro"
+    },
+    {
+      "name": "rules-reference",
+      "label": "Rules Reference",
+      "system": "monsterweek",
+      "path": "./packs/rules-reference.db",
+      "entity": "JournalEntry"
+    },
+    {
+      "name": "playbook-archetypes-in-pop-culture",
+      "label": "Playbook Archetypes in Pop Culture",
+      "system": "monsterweek",
+      "path": "./packs/playbook-archetypes-in-pop-culture.db",
+      "entity": "JournalEntry"
+    },
+    {
+      "name": "basic-moves",
+      "label": "Basic Moves",
+      "system": "monsterweek",
+      "path": "./packs/basic-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "chosen-moves",
+      "label": "Chosen: Moves",
+      "system": "monsterweek",
+      "path": "./packs/chosen-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "chosen-special-weapon",
+      "label": "Chosen: Special Weapon",
+      "system": "monsterweek",
+      "path": "./packs/chosen-special-weapon.db",
+      "entity": "Item"
+    },
+    {
+      "name": "crooked-moves",
+      "label": "Crooked: Moves",
+      "system": "monsterweek",
+      "path": "./packs/crooked-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "crooked-weapons",
+      "label": "Crooked: Weapons",
+      "system": "monsterweek",
+      "path": "./packs/crooked-weapons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "divine-moves",
+      "label": "Divine: Moves",
+      "system": "monsterweek",
+      "path": "./packs/divine-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "divine-weapons",
+      "label": "Divine: Weapons",
+      "system": "monsterweek",
+      "path": "./packs/divine-weapons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "expert-weapons",
+      "label": "Expert: Weapons",
+      "system": "monsterweek",
+      "path": "./packs/expert-weapons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "expert-moves",
+      "label": "Expert: Moves",
+      "system": "monsterweek",
+      "path": "./packs/expert-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "expert-haven",
+      "label": "Expert: Haven",
+      "system": "monsterweek",
+      "path": "./packs/expert-haven.db",
+      "entity": "Item"
+    },
+    {
+      "name": "flake-moves",
+      "label": "Flake: Moves",
+      "system": "monsterweek",
+      "path": "./packs/flake-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "flake-weapons",
+      "label": "Flake: Weapons",
+      "system": "monsterweek",
+      "path": "./packs/flake-weapons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "initiate-moves",
+      "label": "Initiate: Moves",
+      "system": "monsterweek",
+      "path": "./packs/initiate-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "initiate-weapons",
+      "label": "Initiate: Weapons",
+      "system": "monsterweek",
+      "path": "./packs/initiate-weapons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "monstrous-moves",
+      "label": "Monstrous: Moves",
+      "system": "monsterweek",
+      "path": "./packs/monstrous-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "monstrous-weapons",
+      "label": "Monstrous: Weapons",
+      "system": "monsterweek",
+      "path": "./packs/monstrous-weapons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "monstrous-natural-attacks",
+      "label": "Monstrous: Natural Attacks",
+      "system": "monsterweek",
+      "path": "./packs/monstrous-natural-attacks.db",
+      "entity": "Item"
+    },
+    {
+      "name": "mundane-moves",
+      "label": "Mundane: Moves",
+      "system": "monsterweek",
+      "path": "./packs/mundane-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "mundane-weapons",
+      "label": "Mundane: Weapons",
+      "system": "monsterweek",
+      "path": "./packs/mundane-weapons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "professional-moves",
+      "label": "Professional: Moves",
+      "system": "monsterweek",
+      "path": "./packs/professional-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "professional-weapons",
+      "label": "Professional: Weapons",
+      "system": "monsterweek",
+      "path": "./packs/professional-weapons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "professional-armour",
+      "label": "Professional: Armour",
+      "system": "monsterweek",
+      "path": "./packs/professional-armour.db",
+      "entity": "Item"
+    },
+    {
+      "name": "spell-slinger-weapons",
+      "label": "Spell-Slinger: Weapons",
+      "system": "monsterweek",
+      "path": "./packs/spell-slinger-weapons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "spell-slinger-moves",
+      "label": "Spell-Slinger: Moves",
+      "system": "monsterweek",
+      "path": "./packs/spell-slinger-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "spell-slinger-combat-magic",
+      "label": "Spell-Slinger: Combat Magic",
+      "system": "monsterweek",
+      "path": "./packs/spell-slinger-combat-magic.db",
+      "entity": "Item"
+    },
+    {
+      "name": "spooky-weapons",
+      "label": "Spooky: Weapons",
+      "system": "monsterweek",
+      "path": "./packs/spooky-weapons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "spooky-moves",
+      "label": "Spooky: Moves",
+      "system": "monsterweek",
+      "path": "./packs/spooky-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "wronged-moves",
+      "label": "Wronged: Moves",
+      "system": "monsterweek",
+      "path": "./packs/wronged-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "wronged-weapons",
+      "label": "Wronged: Weapons",
+      "system": "monsterweek",
+      "path": "./packs/wronged-weapons.db",
+      "entity": "Item"
+    }
+  ],
   "languages": [
     {
       "lang": "en",
