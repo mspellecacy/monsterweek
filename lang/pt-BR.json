@@ -1,0 +1,40 @@
+{
+  "SIMPLE.ResourceMin": "Mín",
+  "SIMPLE.ResourceValue": "Valor",
+  "SIMPLE.ResourceMax": "Máx",
+
+  "SIMPLE.Moves": "Movimentos",
+  "SIMPLE.Gear": "Equipamento",
+  "SIMPLE.BonusesAndHolds": "Bônus/Penalidades",
+  "SIMPLE.Background": "Histórico",
+  "SIMPLE.Description": "Descrição",
+
+  "SIMPLE.Weapons": "Armas",
+  "SIMPLE.Armor": "Armadura",
+
+  "SIMPLE.Add": "Adicione",
+  "SIMPLE.NewItem": "Novo Item",
+
+  "SIMPLE.Rating": "Classificação",
+  "SIMPLE.Quantity": "Quantidade",
+  "SIMPLE.Tags": "Rótulos",
+
+  "SIMPLE.cool": "Firmeza",
+  "SIMPLE.tough": "Braveza",
+  "SIMPLE.charm": "Sutileza",
+  "SIMPLE.sharp": "Esperteza",
+  "SIMPLE.weird": "Estranheza",
+
+  "SIMPLE.None": "Nenhum",
+  "SIMPLE.Harm": "Dano",
+  "SIMPLE.Okay": "Ok",
+  "SIMPLE.Dying": "Morrendo",
+  "SIMPLE.Unstable": "Instável",
+  "SIMPLE.Luck": "Sorte",
+  "SIMPLE.Doomed": "Condenado",
+  "SIMPLE.Experience": "Experiência",
+
+  "SIMPLE.TotalSuccess": "Sucesso Total",
+  "SIMPLE.MixedSuccess": "Sucesso Parcial",
+  "SIMPLE.Failure": "Falha"
+}
