@@ -18,27 +18,6 @@
       "entity": "Actor"
     },
     {
-      "name": "basic-move-macros",
-      "label": "Basic Move Macros",
-      "system": "monsterweek",
-      "path": "./packs/basic-move-macros.db",
-      "entity": "Macro"
-    },
-    {
-      "name": "rules-reference",
-      "label": "Rules Reference",
-      "system": "monsterweek",
-      "path": "./packs/rules-reference.db",
-      "entity": "JournalEntry"
-    },
-    {
-      "name": "playbook-archetypes-in-pop-culture",
-      "label": "Playbook Archetypes in Pop Culture",
-      "system": "monsterweek",
-      "path": "./packs/playbook-archetypes-in-pop-culture.db",
-      "entity": "JournalEntry"
-    },
-    {
       "name": "basic-moves",
       "label": "Basic Moves",
       "system": "monsterweek",
