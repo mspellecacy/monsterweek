@@ -217,6 +217,6 @@
   "primaryTokenAttribute": "harm",
   "url": "https://gitlab.com/3cell/monsterweek/",
   "manifest": "https://gitlab.com/3cell/monsterweek/-/raw/motw/system.json",
-  "download": "https://gitlab.com/3cell/monsterweek/-/archive/v1.1.1/monsterweek-v1.1.1.zip",
+  "download": "https://gitlab.com/3cell/monsterweek/-/archive/v1.2.0/monsterweek-v1.2.0.zip",
   "license": "LICENSE.txt"
 }
