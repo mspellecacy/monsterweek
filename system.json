@@ -39,6 +39,13 @@
       "entity": "Item"
     },
     {
+      "name": "crooked-background",
+      "label": "Crooked: Background",
+      "system": "monsterweek",
+      "path": "./packs/crooked-background.db",
+      "entity": "Item"
+    },
+    {
       "name": "crooked-moves",
       "label": "Crooked: Moves",
       "system": "monsterweek",
