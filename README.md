@@ -2,8 +2,10 @@
 
 A simple, unofficial [Foundry VTT](https://foundryvtt.com/) system for
 [Evil Hat Productions](https://www.evilhat.com/)'s [Monster of the
-Week](https://www.evilhat.com/home/monster-of-the-week/). Created with
-permission from the publisher.
+Week](https://www.evilhat.com/home/monster-of-the-week/).
+
+The text from Monster of the Week used in this system is copyright Evil Hat
+Productions and Generic Games. Used with permission.
 
 ## Installing
 
@@ -25,10 +27,15 @@ Includes:
 - Rollable ratings: click on the Cool/Tough/Charm/etc. header on the hunter
   sheet to see the roll in the chat window, with a header for "total success",
   "mixed success", or "failure".
+- Compendium entries for basic and hunter moves from the core MotW rulebook.
+- A "Playbook Templates" compendium with starter sheets for the basic set of
+  Hunter types. The "Background" and "Bonuses/Holds" tabs of the sheets
+  include extra hunter info.
 
 Doesn't include:
 
-- A compendium of moves, basic or otherwise
+- First-class tracking for advancements, although the "Bonuses/Holds" tab
+  in the template sheets include free-form text for tracking them.
 - Ways to represent hunter-specific concepts like
   the Pararomantic's "Relationship status" track, the Hex's Rotes, or
   the Spell-Slinger's spells
@@ -42,9 +49,6 @@ my best. :)
 
 This system is released under the MIT license described in
 [LICENSE.txt](LICENSE.txt), and its copyright belongs to its contributors.
-
-Some text and concepts included in this system may be copyright [Evil Hat
-Productions](https://www.evilhat.com/).
 
 Forked from the [Simple Worldbuilding
 System](https://gitlab.com/foundrynet/worldbuilding).
@@ -77,6 +81,8 @@ of stuff that isn't fully supported by the system.
 Create by using the "+" icon in the header of the Moves list on the Hunter
 sheet, or creating a new item in the "Items" chat tab and selecting "move" as
 the type.
+
+You can also drag in Moves from the included compendiums.
 
 ![Move sheet](docs/images/move-sheet.png)
 
