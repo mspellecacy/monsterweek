@@ -32,13 +32,6 @@
       "entity": "Item"
     },
     {
-      "name": "chosen-special-weapon",
-      "label": "Chosen: Special Weapon",
-      "system": "monsterweek",
-      "path": "./packs/chosen-special-weapon.db",
-      "entity": "Item"
-    },
-    {
       "name": "crooked-background",
       "label": "Crooked: Background",
       "system": "monsterweek",
@@ -137,13 +130,6 @@
       "entity": "Item"
     },
     {
-      "name": "monstrous-natural-attacks",
-      "label": "Monstrous: Natural Attacks",
-      "system": "monsterweek",
-      "path": "./packs/monstrous-natural-attacks.db",
-      "entity": "Item"
-    },
-    {
       "name": "mundane-moves",
       "label": "Mundane: Moves",
       "system": "monsterweek",
@@ -172,13 +158,6 @@
       "entity": "Item"
     },
     {
-      "name": "professional-armour",
-      "label": "Professional: Armour",
-      "system": "monsterweek",
-      "path": "./packs/professional-armour.db",
-      "entity": "Item"
-    },
-    {
       "name": "spell-slinger-weapons",
       "label": "Spell-Slinger: Weapons",
       "system": "monsterweek",
@@ -190,13 +169,6 @@
       "label": "Spell-Slinger: Moves",
       "system": "monsterweek",
       "path": "./packs/spell-slinger-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "spell-slinger-combat-magic",
-      "label": "Spell-Slinger: Combat Magic",
-      "system": "monsterweek",
-      "path": "./packs/spell-slinger-combat-magic.db",
       "entity": "Item"
     },
     {
