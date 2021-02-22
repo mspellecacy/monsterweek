@@ -2,7 +2,7 @@
   "name": "monsterweek",
   "title": "Monster/Week",
   "description": "A simple system for Monster of the Week.",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "minimumCoreVersion": "0.7.0",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 1,
