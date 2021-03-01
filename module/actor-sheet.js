@@ -127,6 +127,29 @@ export class SimpleActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
+  /**
+   * Shows/hides item (move/gear/etc.) summaries when clicking on item names.
+   * @private
+   */
+  _onItemNameClick(event) {
+    event.preventDefault();
+    let li = $(event.currentTarget).parents(".item");
+    let item = this.actor.getOwnedItem(li.data("item-id"));
+
+    // Toggle summary
+    if (li.hasClass("item-expanded")) {
+      let summary = li.children(".item-summary");
+      summary.slideUp(200, () => summary.remove());
+    } else {
+      let div = $(`<div class="item-summary">${item.data.data.description}</div>`);
+      li.append(div.hide());
+      div.slideDown(200);
+    }
+    li.toggleClass("item-expanded");
+  }
+
+  /* -------------------------------------------- */
+
   /** @override */
 	activateListeners(html) {
     super.activateListeners(html);
@@ -145,6 +168,9 @@ export class SimpleActorSheet extends ActorSheet {
       const delta = ev.currentTarget.classList.contains("marked") ? -1 : 1;
       this.actor.modifyValue(valueName, delta);
     });
+
+    // Show/hide item (move/gear/etc) summaries when clicking on item names.
+    html.find('.item-list .item .item-name').click(ev => this._onItemNameClick(ev));
 
     // Add Inventory Item
     html.find('.item-create').click(ev => {

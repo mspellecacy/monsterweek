@@ -139,6 +139,9 @@
   margin: 0;
   color: #191813;
 }
+.monsterweek .item-list .item-name:hover {
+  text-shadow: 0 0 10px red;
+}
 .monsterweek .item-list .item-controls {
   flex: 0 0 36px;
 }
@@ -155,6 +158,13 @@
   font-size: 11px;
   flex: none;
   width: auto;
+}
+.monsterweek .item-list .item-summary {
+  flex: 0 0 100%;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0.25em 0.5em;
+  color: #191813;
 }
 .monsterweek .chip {
   display: inline-block;

@@ -162,6 +162,11 @@
     .item-name {
       margin: 0;
       color: #191813;
+
+      // Hint that the name is clickable.
+      &:hover {
+        text-shadow: 0 0 10px red;
+      }
     }
 
     .item-controls {
@@ -182,6 +187,15 @@
       font-size: 11px;
       flex: none;
       width: auto;
+    }
+    
+    // Item Dropdown Summary
+    .item-summary {
+      flex: 0 0 100%;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 0.25em 0.5em;
+      color: #191813;
     }
   }
 
