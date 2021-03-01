@@ -2,7 +2,7 @@
   "name": "monsterweek",
   "title": "Monster/Week",
   "description": "A simple system for Monster of the Week.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "minimumCoreVersion": "0.7.0",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 1,
@@ -217,6 +217,6 @@
   "primaryTokenAttribute": "harm",
   "url": "https://gitlab.com/3cell/monsterweek/",
   "manifest": "https://gitlab.com/3cell/monsterweek/-/raw/motw/system.json",
-  "download": "https://gitlab.com/3cell/monsterweek/-/archive/v1.2.0/monsterweek-v1.2.0.zip",
+  "download": "https://gitlab.com/3cell/monsterweek/-/archive/v1.2.1/monsterweek-v1.2.1.zip",
   "license": "LICENSE.txt"
 }
