@@ -87,10 +87,8 @@ You can also drag in Moves from the included compendiums.
 ![Move sheet](docs/images/move-sheet.png)
 
 If the move typically requires rolling a specific rating, you can select it in
-the drop-down at the top, and it will appear as a chip on the hunter sheet.
-
-Those chips do not currently trigger a roll, but they let you know which rating
-to roll without needing to open the move.
+the drop-down at the top, and it will appear as a chip on the hunter sheet which
+can be clicked to roll that rating
 
 ### Gear/Weapon/Armor
 

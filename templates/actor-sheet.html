@@ -10,7 +10,7 @@
                 {{!-- TODO: Is the order stable? --}}
                 {{#each data.ratings as |rating id|}}
                 <div class="rating">
-                    <label><a class="rollable" data-roll="2d6 + {{rating.value}}">{{localize (concat "SIMPLE." id)}}</a></label>
+                    <label><a class="rollable" data-rating="{{id}}">{{localize (concat "SIMPLE." id)}}</a></label>
                     <input
                       type="text"
                       name="data.ratings.{{id}}.value"
@@ -92,8 +92,9 @@
                                 <h4 class="item-name">
                                     {{item.name}}
                                     {{#if (isNonEmptyString item.data.rating)}}
-                                    {{!-- TODO: Make this chip roll with the rating --}}
-                                    <span class="chip">{{localize (concat "SIMPLE." item.data.rating)}}</span>
+                                    <a class="chip rollable" data-rating="{{item.data.rating}}" data-title="{{item.name}}">
+                                      {{~localize (concat "SIMPLE." item.data.rating)~}}
+                                    </a>
                                     {{/if}}
                                 </h4>
                                 <div class="item-controls">

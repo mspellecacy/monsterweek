@@ -106,10 +106,14 @@ export class SimpleActorSheet extends ActorSheet {
    * @private
    */
   _onRatingRoll(ev) {
-    let button = $(ev.currentTarget);
-    let r = new Roll(button.data('roll'), this.actor.getRollData()).roll();
+    ev.preventDefault();
+    ev.stopPropagation();
 
-    var tier;
+    let button = $(ev.currentTarget);
+    let rating = button.data("rating")
+    let r = new Roll(`2d6 + @ratings.${rating}.value`, this.actor.getRollData()).roll();
+
+    let tier;
     if (r.total >= 10) {
       tier = game.i18n.localize("SIMPLE.TotalSuccess");
     } else if (r.total >= 7) {
@@ -118,10 +122,15 @@ export class SimpleActorSheet extends ActorSheet {
       tier = game.i18n.localize("SIMPLE.Failure");
     }
 
+    let title = button.data("title");
+    if (!title) {
+      title = game.i18n.localize("SIMPLE." + rating);
+    }
+
     r.toMessage({
       user: game.user._id,
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `<h2>${button.text()}</h2><i>${tier}</i>`
+      flavor: `<h2>${title}</h2><i>${tier}</i>`
     });
   }
 
@@ -156,7 +165,7 @@ export class SimpleActorSheet extends ActorSheet {
 
     if (this.actor.owner) {
       // Roll when clicking the name of a rating.
-      html.find('.rating .rollable').click(ev => this._onRatingRoll(ev));
+      html.find(".rollable").on("click", this._onRatingRoll.bind(this));
     }
 
     // Everything below here is only needed if the sheet is editable
