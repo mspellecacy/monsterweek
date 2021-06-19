@@ -5,10 +5,10 @@
 export class SimpleActorSheet extends ActorSheet {
 
   /** @override */
-	static get defaultOptions() {
-	  return mergeObject(super.defaultOptions, {
-  	  classes: ["monsterweek", "sheet", "actor"],
-  	  template: "systems/monsterweek/templates/actor-sheet.html",
+  static get defaultOptions() {
+    return mergeObject(super.defaultOptions, {
+      classes: ["monsterweek", "sheet", "actor"],
+      template: "systems/monsterweek/templates/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [
@@ -151,7 +151,7 @@ export class SimpleActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /** @override */
-	activateListeners(html) {
+  activateListeners(html) {
     super.activateListeners(html);
 
     if (this.actor.owner) {

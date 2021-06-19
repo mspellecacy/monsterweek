@@ -5,12 +5,12 @@
 export class SimpleItemSheet extends ItemSheet {
 
   /** @override */
-	static get defaultOptions() {
-	  return mergeObject(super.defaultOptions, {
-			classes: ["monsterweek", "sheet", "item"],
-			template: "systems/monsterweek/templates/item-sheet.html",
-			width: 520,
-			height: 480,
+  static get defaultOptions() {
+    return mergeObject(super.defaultOptions, {
+      classes: ["monsterweek", "sheet", "item"],
+      template: "systems/monsterweek/templates/item-sheet.html",
+      width: 520,
+      height: 480,
       tabs: [
         {
           navSelector: ".sheet-tabs",
@@ -18,7 +18,7 @@ export class SimpleItemSheet extends ItemSheet {
           initial: "description"
         }
       ]
-		});
+    });
   }
 
   /* -------------------------------------------- */
@@ -62,7 +62,7 @@ export class SimpleItemSheet extends ItemSheet {
   /* -------------------------------------------- */
 
   /** @override */
-	activateListeners(html) {
+  activateListeners(html) {
     super.activateListeners(html);
 
     // Everything below here is only needed if the sheet is editable

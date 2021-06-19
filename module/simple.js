@@ -127,7 +127,7 @@ Hooks.on("createItem", item => {
     newImg = DEFAULT_MOVE_ICON;
   }
 
-	item.update({
+  item.update({
     img: (!item.data.img || item.data.img === MYSTERY_MAN_ICON)
         ? newImg
         : item.data.img
@@ -138,8 +138,8 @@ Hooks.once('setup', async function() {
   // Pre-cache these or else the first time we load the sheet it will overwrite
   // the image we patch in. Thanks to
   // https://github.com/schultzcole/FVTT-Default-Image-Overrider for this trick!
-	await Promise.all([
-		getTemplate("systems/monsterweek/templates/actor-sheet.html"),
-		getTemplate("systems/monsterweek/templates/item-sheet.html"),
-	]);
+  await Promise.all([
+    getTemplate("systems/monsterweek/templates/actor-sheet.html"),
+    getTemplate("systems/monsterweek/templates/item-sheet.html"),
+  ]);
 });
