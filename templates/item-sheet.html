@@ -1,14 +1,16 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
-        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}"/>
         <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+            <h1 class="charname">
+                <input name="name" type="text" value="{{data.name}}" placeholder="Name"/>
+            </h1>
             <div class="flexrow">
                 {{#if isMove}}
                 <div class="resource">
                     <label>{{localize "SIMPLE.Rating"}}</label>
                     <select class="select-rating" name="data.rating" data-type="String">
-                        {{#select data.rating}}
+                        {{#select systemData.rating}}
                         {{#each ratings as |rating|}}
                         <option value="{{rating}}">{{localize (concat "SIMPLE." rating)}}</option>
                         {{/each}}
@@ -19,11 +21,11 @@
                 {{else}}
                 <div class="resource flex2">
                     <label>{{localize "SIMPLE.Tags"}}</label>
-                    <input type="text" name="data.tags" value="{{data.tags}}" data-dtype="String"/>
+                    <input type="text" name="data.tags" value="{{systemData.tags}}" data-dtype="String"/>
                 </div>
                 <div class="resource flex1">
                     <label>{{localize "SIMPLE.Quantity"}}</label>
-                    <input type="text" name="data.quantity" value="{{data.quantity}}" data-dtype="Number"/>
+                    <input type="text" name="data.quantity" value="{{systemData.quantity}}" data-dtype="Number"/>
                 </div>
                 {{/if}}
             </div>
@@ -43,7 +45,7 @@
     <section class="tab-content">
         {{!-- Description Tab --}}
         <div class="tab" data-group="primary" data-tab="description">
-            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+            {{editor content=systemData.description target="data.description" button=true owner=owner editable=editable}}
         </div>
     </section>
 </form>

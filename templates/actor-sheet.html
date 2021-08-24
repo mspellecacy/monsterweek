@@ -2,13 +2,15 @@
 
     {{!-- Sheet Header --}}
     <header class="sheet-header">
-        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="100" width="100"/>
         <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+            <h1 class="charname">
+                <input name="name" type="text" value="{{data.name}}" placeholder="Name"/>
+            </h1>
             {{!-- Ratings: Cool, Tough, etc. --}}
             <div class="flexrow ratings">
                 {{!-- TODO: Is the order stable? --}}
-                {{#each data.ratings as |rating id|}}
+                {{#each systemData.ratings as |rating id|}}
                 <div class="rating">
                     <label><a class="rollable" data-rating="{{id}}">{{localize (concat "SIMPLE." id)}}</a></label>
                     <input
@@ -29,13 +31,13 @@
             <div>
                 <label>{{localize "SIMPLE.Okay"}}</label>
                 {{> "systems/monsterweek/templates/parts/track.html"
-                    valueName="harm" value=data.harm}}
+                    valueName="harm" value=systemData.harm}}
                 <label>{{localize "SIMPLE.Dying"}}</label>
             </div>
             <div>
                 <label>{{localize "SIMPLE.Unstable"}}</label>
                 {{> "systems/monsterweek/templates/parts/track.html"
-                    valueName="unstable" value=data.unstable}}
+                    valueName="unstable" value=systemData.unstable}}
             </div>
         </div>
         <div>
@@ -43,7 +45,7 @@
             <div>
                 <label>{{localize "SIMPLE.Okay"}}</label>
                 {{> "systems/monsterweek/templates/parts/track.html"
-                    valueName="luck" value=data.luck}}
+                    valueName="luck" value=systemData.luck}}
                 <label>{{localize "SIMPLE.Doomed"}}</label>
             </div>
         </div>
@@ -51,7 +53,7 @@
             <label class="header">{{localize "SIMPLE.Experience"}}</label>
             <div>
                 {{> "systems/monsterweek/templates/parts/track.html"
-                    valueName="experience" value=data.experience}}
+                    valueName="experience" value=systemData.experience}}
             </div>
         </div>
     </section>
@@ -110,7 +112,7 @@
 
                 {{!-- Background Tab --}}
                 <div class="tab background" data-group="left" data-tab="background">
-                    {{editor content=data.background target="data.background" button=true owner=owner editable=editable}}
+                    {{editor content=systemData.background target="data.background" button=true owner=owner editable=editable}}
                 </div>
             </div>
         </div>
@@ -173,7 +175,7 @@
                 {{!-- TODO: Add and remove elements --}}
                 {{!-- TODO: May be worth making these full items so we can have a compendium of them --}}
                 <div class="tab holds" data-group="right" data-tab="holds">
-                    {{editor content=data.holds target="data.holds" button=true owner=owner editable=editable}}
+                    {{editor content=systemData.holds target="data.holds" button=true owner=owner editable=editable}}
                 </div>
             </div>
         </div>
