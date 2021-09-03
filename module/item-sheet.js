@@ -4,9 +4,9 @@
  */
 export class SimpleItemSheet extends ItemSheet {
 
-  /** @override */
+  /** @inheritdoc */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["monsterweek", "sheet", "item"],
       template: "systems/monsterweek/templates/item-sheet.html",
       width: 520,
@@ -23,20 +23,23 @@ export class SimpleItemSheet extends ItemSheet {
 
   /* -------------------------------------------- */
 
-  /** @override */
+  /** @inheritdoc */
   getData() {
-    const data = super.getData();
+    const context = super.getData();
+    context.systemData = context.data.data;
 
-    data.isMove = data.item.type === "move";
-    data.ratings = ["cool", "tough", "charm", "sharp", "weird"];
+    context.isMove = context.item.data.type === "move";
+    context.ratings = ["cool", "tough", "charm", "sharp", "weird"];
 
-    return data;
+    // This is the object that determines the namespace
+    // seen by the HTML templates.
+    return context;
   }
 
   /* -------------------------------------------- */
 
   /**
-   * @override
+   * @inheritdoc
    * Called when the sheet window is moved or resized.
    */
   setPosition(options={}) {
@@ -61,7 +64,7 @@ export class SimpleItemSheet extends ItemSheet {
 
   /* -------------------------------------------- */
 
-  /** @override */
+  /** @inheritdoc */
   activateListeners(html) {
     super.activateListeners(html);
 
@@ -74,8 +77,10 @@ export class SimpleItemSheet extends ItemSheet {
 
   /* -------------------------------------------- */
 
-  /** @override */
+  /** @inheritdoc */
   _updateObject(event, formData) {
+    // TODO: Replace this with _getSubmitData().
+
     // Lets us intercept edits before sending to the server.
     // formData contains name/value pairs from <input> elements etc. in the form.
 

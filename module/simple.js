@@ -27,7 +27,7 @@ Hooks.once("init", async function() {
   };
 
   // Define custom Entity classes
-  CONFIG.Actor.entityClass = SimpleActor;
+  CONFIG.Actor.documentClass = SimpleActor;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
@@ -101,7 +101,9 @@ Hooks.once("init", async function() {
   });
 
   // Preload template partials.
-  preloadHandlebarsTemplates();
+  await preloadHandlebarsTemplates();
+
+  console.log("Monster of the Week initialized.");
 });
 
 /* -------------------------------------------- */

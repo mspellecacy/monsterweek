@@ -4,9 +4,9 @@
  */
 export class SimpleActorSheet extends ActorSheet {
 
-  /** @override */
+  /** @inheritdoc */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["monsterweek", "sheet", "actor"],
       template: "systems/monsterweek/templates/actor-sheet.html",
       width: 600,
@@ -29,16 +29,19 @@ export class SimpleActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
-  /** @override */
+  /** @inheritdoc */
   getData() {
-    const data = super.getData();
+    const context = super.getData();
+    context.systemData = context.data.data;
 
     if (this.actor.data.type == 'hunter') {
-      this._prepareHunterRatings(data);
-      this._prepareHunterItems(data);
+      this._prepareHunterRatings(context);
+      this._prepareHunterItems(context);
     }
 
-    return data;
+    // This is the object that determines the namespace
+    // seen by the HTML templates.
+    return context;
   }
 
   /**
@@ -47,7 +50,7 @@ export class SimpleActorSheet extends ActorSheet {
    * @param {Object} sheetData The sheet containing the actor to prepare.
    */
   _prepareHunterRatings(sheetData) {
-    let ratings = sheetData.actor.data.ratings;
+    let ratings = sheetData.data.data.ratings;
     for (let key in ratings) {
       if (ratings.hasOwnProperty(key)) {
         let rating = ratings[key];
@@ -159,17 +162,17 @@ export class SimpleActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
-  /** @override */
+  /** @inheritdoc */
   activateListeners(html) {
     super.activateListeners(html);
 
-    if (this.actor.owner) {
+    if (this.actor.isOwner) {
       // Roll when clicking the name of a rating.
       html.find(".rollable").on("click", this._onRatingRoll.bind(this));
     }
 
     // Everything below here is only needed if the sheet is editable
-    if (!this.options.editable) return;
+    if (!this.isEditable) return;
 
     // Handle clicks on "track" elements and update the underlying values.
     html.find(".track-element").click(ev => {
@@ -228,7 +231,7 @@ export class SimpleActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /**
-   * @override
+   * @inheritdoc
    * Called when the sheet window is moved or resized.
    */
   setPosition(options={}) {
@@ -253,8 +256,10 @@ export class SimpleActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
-  /** @override */
+  /** @inheritdoc */
   _updateObject(event, formData) {
+    // TODO: Replace this with _getSubmitData().
+
     // Lets us intercept edits before sending to the server.
     // formData contains name/value pairs from <input> elements etc. in the form.
 
