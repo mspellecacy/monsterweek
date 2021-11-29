@@ -1,3 +1,46 @@
+@font-face {
+  font-family: "MomsTypewriter";
+  src: url("assets/fonts/MomsTypewriter/MomsTypewriter.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AksiMosi";
+  src: url("assets/fonts/aAksiMosi/aAksiMosi.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sling";
+  src: url("assets/fonts/Sling/Sling.ttf") format("truetype");
+  /* Safari, Android, iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+#chat-log > li {
+  background: url("/systems/monsterweek/images/ui/paper-512.jpg") repeat;
+
+  .dice-roll {
+    font-family: AksiMosi, sans-serif;
+    font-size: medium;
+  }
+}
+#chat-log > li > header > span.flavor-text {
+  h2 {
+    font-family: MomsTypewriter, serif;
+    font-weight: bold;
+  }
+  i {
+    font-family: AksiMosi, sans-serif;
+    font-size: large;
+  }
+}
+
+
 .monsterweek {
   .window-content {
     height: 100%;
@@ -31,22 +74,28 @@
     h1.charname {
       height: @sheet-header-height / 2;
       padding: 0px;
-      margin: 5px 0;
+      margin: 5px 5px;
       border-bottom: 0;
+      font-family: MomsTypewriter, serif;
       input {
         width: 100%;
         height: 100%;
         margin: 0;
+        border: 0;
       }
     }
   }
 
   .rating {
+    font-family: MomsTypewriter, serif;
+    font-size: large;
     text-align: center;
     label {
       font-weight: bold;
     }
     input {
+      font-family: AksiMosi, sans-serif;
+      font-size: medium;
       border: none;
     }
   }
@@ -58,8 +107,14 @@
     padding: 0 10px;
 
     label.header {
+      font-family: MomsTypewriter, serif;
       font-weight: bold;
     }
+    div > div > label {
+      font-family: Sling, serif;
+      font-size: small;
+    }
+
   }
 
   .track {
@@ -73,6 +128,7 @@
   /* Sheet Tabs */
   .tabs {
     .item {
+      font-family: MomsTypewriter, serif;
       line-height: 40px;
       font-weight: bold;
     }
@@ -108,6 +164,7 @@
     color: #7a7971;
 
     .inventory-header {
+      font-family: MomsTypewriter, serif;
       margin: 2px 0;
       padding: 0;
       align-items: center;
@@ -120,7 +177,6 @@
         margin: 0 -5px 0 0;
         padding-left: 5px;
         color: #191813;
-        font-size: 20px;
         font-weight: 700;
         font-size: 16px;
       }
@@ -162,7 +218,9 @@
     .item-name {
       margin: 0;
       color: #191813;
-
+      font-family: MomsTypewriter, serif;
+      font-size: 14px;
+      font-weight: bold;
       // Hint that the name is clickable.
       &:hover {
         text-shadow: 0 0 10px red;
@@ -192,10 +250,11 @@
     // Item Dropdown Summary
     .item-summary {
       flex: 0 0 100%;
-      font-size: 12px;
+      font-size: 14px;
       line-height: 16px;
       padding: 0.25em 0.5em;
       color: #191813;
+      font-family: Sling, sans-serif;
     }
   }
 
