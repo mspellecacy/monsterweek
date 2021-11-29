@@ -114,6 +114,7 @@ export class SimpleActorSheet extends ActorSheet {
 
     let button = $(ev.currentTarget);
     let rating = button.data("rating")
+    let description = button.data("description") || "";
     let r = new Roll(`2d6 + @ratings.${rating}.value`, this.actor.getRollData()).roll();
 
     let tier;
@@ -133,7 +134,7 @@ export class SimpleActorSheet extends ActorSheet {
     r.toMessage({
       user: game.user._id,
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `<h2>${title}</h2><i>${tier}</i>`
+      flavor: `<h2>${title}</h2><h3><i>${tier.toUpperCase()}</i></h3><div>${description}</div>`
     });
   }
 
