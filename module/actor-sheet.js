@@ -2,6 +2,9 @@
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
+
+import { Utils } from "./utils.js";
+
 export class SimpleActorSheet extends ActorSheet {
 
   /** @inheritdoc */
@@ -113,9 +116,9 @@ export class SimpleActorSheet extends ActorSheet {
     ev.stopPropagation();
 
     let button = $(ev.currentTarget);
+    let itemId = button.data("item-id") || "";
     let rating = button.data("rating");
     let ratingName = game.i18n.localize("SIMPLE." + rating);
-    let description = button.data("description") || "";
     let r = new Roll(`2d6 + @ratings.${rating}.value`, this.actor.getRollData()).roll();
 
     let tier;
@@ -135,7 +138,7 @@ export class SimpleActorSheet extends ActorSheet {
     r.toMessage({
       user: game.user._id,
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `<h2>${title}</h2><div>${description}</div><h4>(${ratingName})</h4><h3><i>${tier.toUpperCase()}</i></h3>`
+      flavor: `<li class="item" data-item-id="${itemId}" data-actor-id="${this.actor.id}"><h2 class="item-chat">${title}</h2></li><h4>(${ratingName})</h4><h3><i>${tier.toUpperCase()}</i></h3>`
     });
   }
 
@@ -184,7 +187,12 @@ export class SimpleActorSheet extends ActorSheet {
     });
 
     // Show/hide item (move/gear/etc) summaries when clicking on item names.
-    html.find('.item-list .item .item-name').click(ev => this._onItemNameClick(ev));
+    html.find('.item-list .item .item-name').click(ev => {
+      ev.preventDefault();
+      const parentElem = $(ev.currentTarget).parents(".item");
+
+      Utils.moveDescriptionToggler(parentElem, this.actor, parentElem.data("item-id"));
+    });
 
     // Add Inventory Item
     html.find('.item-create').click(ev => {

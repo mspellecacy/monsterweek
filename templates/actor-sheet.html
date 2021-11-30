@@ -94,7 +94,7 @@
                                 <h4 class="item-name">
                                     {{item.name}}
                                     {{#if (isNonEmptyString item.data.rating)}}
-                                    <a class="chip rollable" data-rating="{{item.data.rating}}" data-title="{{item.name}}" data-description="{{item.data.description}}">
+                                    <a class="chip rollable" data-rating="{{item.data.rating}}" data-title="{{item.name}}" data-item-id="{{item._id}}">
                                       {{~localize (concat "SIMPLE." item.data.rating)~}}
                                     </a>
                                     {{/if}}
@@ -152,9 +152,9 @@
                         </li>
                         <ol class="item-list">
                         {{#each section.items as |item id|}}
-                            <li class="item flexrow" data-item-id="{{item._id}}">
+                            <li class="item flexrow"">
                                 <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-                                <h4 class="item-name">
+                                <h4 class="item-name" data-item-id="{{item._id}}>
                                     {{item.name}}
                                     {{#each (split item.data.tags " ") as |tag|}}
                                     <span class="chip">{{tag}}</span>
