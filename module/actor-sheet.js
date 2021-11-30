@@ -113,7 +113,8 @@ export class SimpleActorSheet extends ActorSheet {
     ev.stopPropagation();
 
     let button = $(ev.currentTarget);
-    let rating = button.data("rating")
+    let rating = button.data("rating");
+    let ratingName = game.i18n.localize("SIMPLE." + rating);
     let description = button.data("description") || "";
     let r = new Roll(`2d6 + @ratings.${rating}.value`, this.actor.getRollData()).roll();
 
@@ -128,13 +129,13 @@ export class SimpleActorSheet extends ActorSheet {
 
     let title = button.data("title");
     if (!title) {
-      title = game.i18n.localize("SIMPLE." + rating);
+      title = ratingName;
     }
 
     r.toMessage({
       user: game.user._id,
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `<h2>${title}</h2><h3><i>${tier.toUpperCase()}</i></h3><div>${description}</div>`
+      flavor: `<h2>${title}</h2><div>${description}</div><h4>(${ratingName})</h4><h3><i>${tier.toUpperCase()}</i></h3>`
     });
   }
 
