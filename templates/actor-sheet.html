@@ -94,7 +94,7 @@
                                 <h4 class="item-name">
                                     {{item.name}}
                                     {{#if (isNonEmptyString item.data.rating)}}
-                                    <a class="chip rollable" data-rating="{{item.data.rating}}" data-title="{{item.name}}">
+                                    <a class="chip rollable" data-rating="{{item.data.rating}}" data-title="{{item.name}}" data-description="{{item.data.description}}">
                                       {{~localize (concat "SIMPLE." item.data.rating)~}}
                                     </a>
                                     {{/if}}
