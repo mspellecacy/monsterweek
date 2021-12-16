@@ -153,9 +153,9 @@
                         </li>
                         <ol class="item-list">
                         {{#each section.items as |item id|}}
-                            <li class="item flexrow"">
+                            <li class="item flexrow" data-item-id="{{item._id}}">
                                 <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-                                <h4 class="item-name" data-item-id="{{item._id}}>
+                                <h4 class="item-name">
                                     {{item.name}}
                                     {{#each (split item.data.tags " ") as |tag|}}
                                     <span class="chip">{{tag}}</span>

@@ -21,6 +21,8 @@
   font-weight: normal;
   font-style: normal;
 }
+// //*[@id="chat-log"]/li[4]/header/span[2]/li/div
+
 #chat-log > li {
   background: url("/systems/monsterweek/images/ui/paper-512.jpg") repeat;
 
@@ -29,16 +31,19 @@
       font-family: MomsTypewriter, serif;
       font-weight: bold;
       font-size: medium;
+    }
 
-      .item-summary {
-        list-style: none;
-        flex: 0 0 100%;
-        font-size: medium;
-        font-weight: normal;
-        line-height: 16px;
-        padding: 0.25em 0.5em;
-        color: #191813;
-        font-family: Sling, sans-serif;
+    .item-chat-desc {
+      flex: 0 0 100%;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 16px;
+      padding: 0.25em 0.5em;
+      color: #191813;
+      font-family: Sling, sans-serif;
+
+      li {
+        list-style: square;
       }
 
     }
