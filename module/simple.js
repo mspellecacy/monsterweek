@@ -10,7 +10,6 @@ import { SimpleActor } from "./actor.js";
 import { SimpleItemSheet } from "./item-sheet.js";
 import { SimpleActorSheet } from "./actor-sheet.js";
 import { preloadHandlebarsTemplates } from "./templates.js";
-import { Utils } from "./utils.js"
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -141,12 +140,8 @@ Hooks.on("createItem", item => {
 Hooks.on("renderChatMessage", async (msg, elem) => {
   elem.on("click", e => {
     const source = $(e.target).parents('.item');
-    const itemHeader = source.children('h2.item-chat');
-    const itemId = source.data('item-id');
-    if (!itemId) return;
-
-    const actor = game.actors.get(source.data('actor-id'));
-    Utils.moveDescriptionToggler(itemHeader, actor, itemId);
+    const itemDesc = source.children('div.item-chat-desc');
+    $(itemDesc).slideToggle(200);
   });
 });
 

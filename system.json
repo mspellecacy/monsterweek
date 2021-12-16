@@ -7,7 +7,7 @@
   "compatibleCoreVersion": "0.8.9",
   "templateVersion": 1,
   "author": "Dave Bort <git@dbort.com>",
-  "esmodules": ["module/simple.js", "module/utils.js"],
+  "esmodules": ["module/simple.js"],
   "styles": ["styles/simple.css"],
   "packs": [
     {

@@ -3,8 +3,6 @@
  * @extends {ActorSheet}
  */
 
-import { Utils } from "./utils.js";
-
 export class SimpleActorSheet extends ActorSheet {
 
   /** @inheritdoc */
@@ -121,6 +119,11 @@ export class SimpleActorSheet extends ActorSheet {
     let ratingName = game.i18n.localize("SIMPLE." + rating);
     let r = new Roll(`2d6 + @ratings.${rating}.value`, this.actor.getRollData()).roll();
 
+
+
+    let desc = this.getItemDesc(itemId);
+
+
     let tier;
     if (r.total >= 10) {
       tier = game.i18n.localize("SIMPLE.TotalSuccess");
@@ -138,8 +141,14 @@ export class SimpleActorSheet extends ActorSheet {
     r.toMessage({
       user: game.user._id,
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `<li class="item" data-item-id="${itemId}" data-actor-id="${this.actor.id}"><h2 class="item-chat">${title}</h2></li><h4>(${ratingName})</h4><h3><i>${tier.toUpperCase()}</i></h3>`
+      flavor: `<li class="item"><h2 class="item-chat">${title}</h2><div class="item-chat-desc" style="display: none;">${desc}</div></li><h4>(${ratingName})</h4><h3><i>${tier.toUpperCase()}</i></h3>`
     });
+  }
+
+
+  getItemDesc(itemId) {
+    const item = this.actor.items.get(itemId);
+    return item?.data.data.description || "";
   }
 
   /* -------------------------------------------- */
@@ -190,8 +199,13 @@ export class SimpleActorSheet extends ActorSheet {
     html.find('.item-list .item .item-name').click(ev => {
       ev.preventDefault();
       const parentElem = $(ev.currentTarget).parents(".item");
+      let descDiv = parentElem.children('div.item-summary');
 
-      Utils.moveDescriptionToggler(parentElem, this.actor, parentElem.data("item-id"));
+      if($(descDiv).html() === "") {
+        descDiv.append(this.getItemDesc(parentElem.data('item-id')));
+      }
+
+      $(descDiv).slideToggle(200);
     });
 
     // Add Inventory Item
